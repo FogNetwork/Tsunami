@@ -22,22 +22,19 @@ Read the documentation below to find out more</p>
 </div>
 
 ## Documentation
-The offical documentation 
-
-## Table of Contents
 
 - [Overview](#overview)
-  - [Supported Sites](#supported)
+  - [Supported Sites](#supported-sites)
   - [Features](#features)
 - [Setup](#setup)
-  - [Locally](#features)
+  - [Locally](#locally)
   - [Deploy](#deploy)
   - [Proxies](#proxies)
 - [FAQ](#faq)
 - [More](#more)
-  - [Proxy Sources](#sources)
+  - [Proxy Sources](#proxy-sources)
   - [Credits](#credits)
-  - [Issues and Pulls Guide](#guide)
+  - [Issues and Pulls Guide](#issues-and-pills-guide)
 
 ## Overview
 
