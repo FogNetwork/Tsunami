@@ -34,11 +34,20 @@ Read the documentation below to find out more</p>
 - [More](#more)
   - [Proxy Sources](#proxy-sources)
   - [Credits](#credits)
-  - [Issues and Pulls Guide](#issues-and-pills-guide)
+  - [Issues and Pulls Guide](#issues-and-pulls-guide)
 
 ## Overview
 
 ### Supported Sites
+
+- google.com
+- discord.com
+- youtube.com
+- invidio.us
+- reddit.com
+- wolframalpha.com
+- 1v1.lol
+- schoolcheats.net?
 
 ### Features
 
@@ -46,11 +55,39 @@ Read the documentation below to find out more</p>
 
 ### Locally
 
+```
+cd tsunami
+```
+
+```
+npm install
+```
+
+```
+npm start
+```
+
 ### Deploy
+
+Click one of the buttons above!
 
 ### Proxies
 
+Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. Proxy sources can be found [here](#proxy-sources) 
+
 ## FAQ
+
+**How can I get new domains?**
+
+Join our discord for more Tsunami links
+
+**Captcha not working/issues**
+
+Captcha is only supported on womginx, though the support is limited
+
+**Why is Discord not working properly?**
+
+Try using womginx or Corrosion. Refreshing the page might help
 
 ## More
 
@@ -59,3 +96,5 @@ Read the documentation below to find out more</p>
 ### Credits
 
 ### Issues and Pulls Guide
+
+See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
