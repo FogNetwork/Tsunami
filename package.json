@@ -2,6 +2,9 @@
     "name": "tsunami",
     "version": "0.0.1",
     "repository": "https://github.com/FogNetwork/Tsunami",
+    "bugs": {
+        "url": "https://github.com/FogNetwork/Tsunami/issues"
+    },
     "description": "Tsunami is a official Fog Network proxy site, made to access the blocked web",
     "main": "index.js",
     "scripts": {
