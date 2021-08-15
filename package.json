@@ -1,0 +1,26 @@
+{
+    "name": "tsunami",
+    "version": "0.0.1",
+    "repository": "https://github.com/FogNetwork/Tsunami",
+    "description": "Tsunami is a official Fog Network proxy site, made to access the blocked web",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "javascript",
+        "proxy",
+        "bypass",
+        "proxy-site",
+        "unblocker",
+        "fog-network"
+    ],
+    "author": "Fog Network",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "corrosion": "^1.0.0",
+        "alloyproxy": "^1.1.0",
+        "unblocker": "^2.3.0"
+    }
+}
