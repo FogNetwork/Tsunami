@@ -78,15 +78,15 @@ Click one of the buttons above and follow the steps
 
 ### Proxies
 
-Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example c.website.com for Corrosion
+Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example c.example.com for Corrosion
 
-[C (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
+[c.example.com (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
 
-[A (Alloy)](https://github.com/titaniumnetwork-dev/alloy)
+[a.example.com (Alloy)](https://github.com/titaniumnetwork-dev/alloy)
 
-[W (Womginx)](https://github.com/binary-person/womginx)
+[w.example.com (Womginx)](https://github.com/binary-person/womginx)
 
-[P (PyDodge)](https://github.com/BinBashBanana/PyDodge)
+[p.example.com (PyDodge)](https://github.com/BinBashBanana/PyDodge)
 
 ## FAQ
 
@@ -130,17 +130,17 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 [Quite A Fancy Emerald](https://github.com/QuiteAFancyEmerald) - Holy Unblocker King
 
-[MikeLime](https://github.com/MikeLime-dev) - Another Proxy developer
+[MikeLime](https://github.com/MikeLime-dev) - Proxy developer
 
 [BinBashBanana](https://github.com/BinBashBanana) - Game Library and PyDodge 
 
-[Binary Person](https://github.com/binary-person) - Creator of Womginx 
+[Binary Person](https://github.com/binary-person) - Creator of Womginx
 
-[Divide](https://github.com/vibedivide) - Chatbox and SystemYA proxy maker
+[Divide](https://github.com/vibedivide) - Chatbox and SystemYA craeter
 
-[EnderKingJ](https://github.com/EnderKingJ) - Proxy maker Ludicrous Owner
+[EnderKingJ](https://github.com/EnderKingJ) - Proxy maker
 
-[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
+[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS Game
 
 ### Issues and Pulls Guide
 
