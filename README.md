@@ -14,11 +14,11 @@ Read the documentation below to find out more</p>
 
 <p>Want to inprove Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
   
-<a href="https://heroku.com/deploy?template=https://github.com/FogNetwork/Tsunami" title="Deploy to Heroku"><img alt="Deploy to Heroku" src="https://github.com/FogNetwork/Tsunami/raw/main/heroku.svg" width="140" height="30"><img></a>
+<a href="https://heroku.com/deploy?template=https://github.com/FogNetwork/Tsunami" title="Deploy to Heroku"><img alt="Deploy to Heroku" src="https://github.com/FogNetwork/Tsunami/raw/main/deploy/heroku.svg" width="140" height="30"><img></a>
 &nbsp;
-<a href="https://repl.it/github/FogNetwork/Tsunami" title="Run on Replit"><img alt="Run on Replit" src="https://github.com/FogNetwork/Tsunami/raw/main/replit.svg" width="140" height="30"><img></a>
+<a href="https://repl.it/github/FogNetwork/Tsunami" title="Run on Replit"><img alt="Run on Replit" src="https://github.com/FogNetwork/Tsunami/raw/main/deploy/replit.svg" width="140" height="30"><img></a>
 &nbsp;
-<a href="https://glitch.com/edit/#!/import/github/FogNetwork/Tsunami" title="Remix on Glitch"><img alt="Remix on glitch" src="https://github.com/FogNetwork/Tsunami/raw/main/glitch.svg" width="140" height="30"><img></a>
+<a href="https://glitch.com/edit/#!/import/github/FogNetwork/Tsunami" title="Remix on Glitch"><img alt="Remix on glitch" src="https://github.com/FogNetwork/Tsunami/raw/main/deploy/glitch.svg" width="140" height="30"><img></a>
 </div>
 
 ## Documentation
