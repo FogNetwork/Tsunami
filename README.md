@@ -6,10 +6,10 @@
 
 <h1>Tsunami</h1>
 
-<h3>An official Fog Network proxy site, made to access the blocked web.</h3>
+<h3>An official Fog Network proxy site, made to access the blocked web</h3>
 
 <p>Surf without web filters like Securly, iBoss, and GoGuardian.
-Made with style, Tsunami includes many features to help you bypass restrictive internet filters and lots more!
+Made with style, Tsunami includes many features protecting your freedom from schools or workplaces
 Read the documentation below to find out more</p>
 
 <p>Want to inprove Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
@@ -93,7 +93,41 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 ### Proxy Sources
 
+[Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)
+
+[Alloy](https://github.com/titaniumnetwork-dev/alloy)
+
+[Womginx](https://github.com/binary-person/womginx)
+
+[PyDodge](https://github.com/BinBashBanana/PyDodge)
+
+[SystemYA](https://github.com/sysce/proxy) (Not Used)
+
+[Via](https://github.com/hypothesis/via) (Not Used)
+
+[Node Unblocker](https://github.com/nfriedly/node-unblocker) (Not Used)
+
+[Powermouse](https://github.com/titaniumnetwork-dev/powermouse) (Not Used)
+
 ### Credits
+
+[Pers0n](https://github.com/th3pers0n) - Owner and main devoper
+
+[Caracal.js](https://github.com/caracal-js) - Proxy developer
+
+[Quite A Fancy Emerald](https://github.com/QuiteAFancyEmerald) - Holy Unblocker King
+
+[MikeLime](https://github.com/MikeLime-dev) - Another Proxy developer
+
+[BinBashBanana](https://github.com/BinBashBanana) - Game Library and PyDodge 
+
+[Binary Person](https://github.com/binary-person) - Creator of Womginx 
+
+[Divide](https://github.com/vibedivide) - Chatbox and SystemYA proxy maker
+
+[EnderKingJ](https://github.com/EnderKingJ) - Proxy maker Ludicrous Owner
+
+[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
 
 ### Issues and Pulls Guide
 
