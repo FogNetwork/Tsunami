@@ -51,6 +51,11 @@ Read the documentation below to find out more</p>
 
 ### Features
 
+- Proxy websites with the best proxies
+- Nice game library
+- Chatbox connected to discord
+- Tab cloaking and other cool features
+
 ## Setup
 
 ### Locally
@@ -69,11 +74,19 @@ npm start
 
 ### Deploy
 
-Click one of the buttons above!
+Click one of the buttons above and follow the steps
 
 ### Proxies
 
-Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. Proxy sources can be found [here](#proxy-sources) 
+Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example c.website.com for Corrosion
+
+[C (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
+
+[A (Alloy)](https://github.com/titaniumnetwork-dev/alloy)
+
+[W (Womginx)](https://github.com/binary-person/womginx)
+
+[P (PyDodge)](https://github.com/BinBashBanana/PyDodge)
 
 ## FAQ
 
