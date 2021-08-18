@@ -26,6 +26,7 @@ Read the documentation below to find out more</p>
 - [Overview](#overview)
   - [Supported Sites](#supported-sites)
   - [Features](#features)
+  - [Pages](#pages)
 - [Setup](#setup)
   - [Locally](#locally)
   - [Deploy](#deploy)
@@ -55,6 +56,14 @@ Read the documentation below to find out more</p>
 - Nice game library
 - Chatbox connected to discord
 - Tab cloaking and other cool features
+
+## Pages
+
+- `index.html` Homepage
+- `1` Proxies
+- `2` Arcade
+- `2` Chatbox
+- `4` Settings
 
 ## Setup
 
