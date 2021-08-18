@@ -68,3 +68,7 @@ color: #3377ff;
 ::-webkit-scrollbar {
 display: none;
 }
+
+::placeholder {
+color: #666666;
+}
