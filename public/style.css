@@ -223,3 +223,12 @@ flex-direction: row;
 justify-content: center; 
 align-items: center;
 }
+
+#chatbox {
+position: absolute;
+top: 60px; 
+left: 0; 
+right: 0; 
+bottem: 0;
+border:none;
+}
