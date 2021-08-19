@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 const config = require('./config.json')
-const port = '8080'
+const port = config.port
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
