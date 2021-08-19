@@ -52,7 +52,7 @@ Read the documentation below to find out more</p>
 
 ### Features
 
-- Proxy websites with the best proxies
+- All the best proxies
 - Nice game library
 - Chatbox connected to discord
 - Tab cloaking and other cool features
