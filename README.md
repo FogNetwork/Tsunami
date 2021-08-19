@@ -59,11 +59,11 @@ Read the documentation below to find out more</p>
 
 ## Pages
 
-- `index.html` Homepage
-- `1` Proxies
-- `2` Arcade
-- `2` Chatbox
-- `4` Settings
+- `/` Homepage
+- `/1` Proxies
+- `/2` Arcade
+- `/2` Chatbox
+- `/4` Settings
 
 ## Setup
 
