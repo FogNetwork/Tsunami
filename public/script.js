@@ -9,7 +9,7 @@ search.addEventListener('keyup', function onEvent(e) {
 function go(url) {
 if (url !== '') {
 if (url.includes('.')) {
-alert(url)
+alert('https://' + url)
 } else if (url.startsWith('https://')) {
 open(url)
 } else if (url.startsWith('http://')) {
