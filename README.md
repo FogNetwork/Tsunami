@@ -63,6 +63,8 @@ Read the documentation below to find out more</p>
 - `/1` Arcade
 - `/2` Chatbox
 - `/3` Settings
+- `/4` Terms
+- `/5` Privacy
 
 ## Setup
 
