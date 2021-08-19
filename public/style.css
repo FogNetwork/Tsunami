@@ -72,3 +72,16 @@ display: none;
 ::placeholder {
 color: #666666;
 }
+
+.homename {
+color: white;
+font-size: 60px;
+text-align: center;
+margin-top: 200px;
+}
+
+.abouthome {
+color: white;
+font-size: 13px;
+text-align: center;
+}
