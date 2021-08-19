@@ -60,10 +60,9 @@ Read the documentation below to find out more</p>
 ## Pages
 
 - `/` Homepage
-- `/1` Proxies
-- `/2` Arcade
+- `/1` Arcade
 - `/2` Chatbox
-- `/4` Settings
+- `/3` Settings
 
 ## Setup
 
@@ -88,6 +87,8 @@ Click one of the buttons above and follow the steps
 ### Proxies
 
 Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example c.example.com for Corrosion
+
+[s.example.com (Smoke)](https://github.com/FogNetwork/Smoke)
 
 [c.example.com (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
 
@@ -114,6 +115,8 @@ Try using womginx or Corrosion. Refreshing the page might help
 ## More
 
 ### Proxy Sources
+
+[Smoke](https://github.com/FogNetwork/Smoke)
 
 [Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)
 
