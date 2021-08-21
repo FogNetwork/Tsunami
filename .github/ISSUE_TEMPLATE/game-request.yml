@@ -1,6 +1,6 @@
 name: Game Request
 description: Request a new game
-labels: [bug]
+labels: [game request]
 body:
   - type: dropdown
     id: type
