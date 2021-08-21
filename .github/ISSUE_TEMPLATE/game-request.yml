@@ -6,7 +6,7 @@ body:
     id: type
     attributes:
       label: Game Type
-      multiple: true
+      multiple: false
       options:
         - Game
         - Flash
@@ -16,7 +16,6 @@ body:
     id: gameurl
     attributes:
       label: Game Url
-      description: Write
       placeholder: Link to the game url
     validations:
       required: false
@@ -24,7 +23,6 @@ body:
     id: comment
     attributes:
       label: Comment
-      description: Write
       placeholder: Leave a comment
     validations:
       required: false
