@@ -1,0 +1,22 @@
+name: Proxy
+description: Anything about the proxies
+labels: [proxy]
+body:
+  - type: dropdown
+    id: proxy
+    attributes:
+      label: Choose Proxy
+      multiple: false
+      options:
+        - Smoke
+        - Corrosion
+        - Alloy
+        - Womginx
+        - PyDodge
+  - type: textarea
+    id: comment
+    attributes:
+      label: Comment
+      placeholder: Leave a comment
+    validations:
+      required: false
