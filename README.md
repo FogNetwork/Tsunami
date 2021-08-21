@@ -65,6 +65,11 @@ Read the documentation below to find out more</p>
 - `/3` Settings
 - `/4` Terms
 - `/5` Privacy
+- `/6` Documentation
+- `/7` Credits
+- `/8` Support and contact
+- `/404` 404 error
+- `/error` Other error
 
 ## Setup
 
