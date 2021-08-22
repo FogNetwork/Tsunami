@@ -143,7 +143,7 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 ### Credits
 
-[Pers0n](https://github.com/th3pers0n) - Owner and main devoper
+[Nebelung](https://github.com/Nebelung-Dev) - Owner and main devoper
 
 [Caracal.js](https://github.com/caracal-js) - Proxy developer
 
