@@ -9,7 +9,7 @@ search.addEventListener('keyup', function onEvent(e) {
 function go(url) {
 if (url !== '') {
 if (url.includes('.')) {
-alert('https://' + url)
+open('https://' + url)
 } else if (url.startsWith('https://')) {
 open(url)
 } else if (url.startsWith('http://')) {
@@ -22,6 +22,12 @@ return false;
 }
 }
 
-function open (url) {
+function open(url) {
 alert(url)
+}
+
+function open2(url) {
+var surf = document.getElementById("surf");
+surf.style.display = "initial";
+surf.setAttribute("src", "");
 }
