@@ -21,7 +21,7 @@ color: #666666;
 .navbar {
 background-color: #343333;
 height: 60px;
-position: absolute;
+position: fixed;
 top: 0;
 left: 0;
 right: 0;
@@ -37,7 +37,7 @@ padding-left: 15px;
 .navitem {
 color: var(--light);
 font-size: 16px;
-position: absolute;
+position: fixed;
 top: 20px;
 }
 
@@ -197,4 +197,20 @@ display: none;
 color: white;
 font-size: 30px;
 line-height: 40px;
+}
+
+.games {
+display: grid;
+grid-template-columns: repeat(auto-fill,250px);
+justify-content: center;
+grid-column-gap: 10px;
+grid-row-gap: 20px;
+}
+
+.game {
+width: 230px;
+height: 310px;
+border-radius: 10px;
+cursor: pointer;
+border: 1px solid white;
 }
