@@ -41,7 +41,7 @@ position: fixed;
 top: 20px;
 }
 
-.proxies {
+.home {
 right: 350px;
 }
 
@@ -80,13 +80,7 @@ color: white;
 font-size: 60px;
 text-align: center;
 margin-top: 180px;
-}
-
-.abouthome {
-color: white;
-font-size: 13px;
-text-align: center;
-margin-top: -50px;
+margin-bottom: 20px;
 }
 
 .search {
@@ -95,8 +89,8 @@ outline: none;
 border: 2.5px solid white;
 font-size: 16px;
 padding: 5px;
-width: 500px;
-height: 40px;
+width: 45%;
+height: 30px;
 background-color: rgb(16,16,16,0);
 padding-left: 34px;
 color: white;
@@ -104,7 +98,7 @@ color: white;
 
 .searchicon {
 position: absolute;
-top: 308px;
+top: 285px;
 margin-left: 12px;
 color: #666666;
 font-size: 18px;
