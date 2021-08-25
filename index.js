@@ -4,8 +4,7 @@ const config = require('./config.json')
 const port = process.env.PORT || config.port
 
 app.use(express.static('./public', {
-    extensions: ['html', 'htm'],
-    res.status(404).send('404');
+    extensions: ['html', 'htm']
 }));
 
 app.get('/', function(req, res){
@@ -15,3 +14,7 @@ app.get('/', function(req, res){
 app.listen(port, () => {
   console.log(`Server running at localhost:${port}`)
 })
+
+app.use(function (req, res) {
+    res.status(404).send('404');
+});
