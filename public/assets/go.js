@@ -1,3 +1,5 @@
+window.onload = function() {
+    
 search = document.getElementById("search");
 search.addEventListener('keyup', function onEvent(e) {
     if (e.keyCode === 13) {
@@ -31,3 +33,5 @@ var surf = document.getElementById("surf");
 surf.style.display = "initial";
 surf.setAttribute("src", "");
 }
+    
+};
