@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const config = require('./config.json')
-const port = config.port
+const port = process.env.PORT || config.port
 
 app.use(express.static('./public'));
 
