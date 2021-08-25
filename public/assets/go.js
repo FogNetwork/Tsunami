@@ -1,4 +1,4 @@
-search = document.getElementById('search');
+search = document.getElementById("search");
 search.addEventListener('keyup', function onEvent(e) {
     if (e.keyCode === 13) {
         go(search.value)
