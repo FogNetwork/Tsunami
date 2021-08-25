@@ -3,7 +3,9 @@ const app = express()
 const config = require('./config.json')
 const port = process.env.PORT || config.port
 
-app.use(express.static('./public'));
+app.use(express.static('./public', {
+    extensions: ['html', 'htm'],
+}));
 
 app.get('/', function(req, res){
     res.sendFile('index.html', {root: './public'});
