@@ -16,5 +16,5 @@ app.listen(port, () => {
 })
 
 app.use(function (req, res) {
-    res.status(404).send('404');
+    res.status(404).sendFile('404.html', {root: './public'});
 });
