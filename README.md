@@ -67,9 +67,9 @@ Read the documentation below to find out more</p>
 - `/5` Privacy
 - `/6` Documentation
 - `/7` Credits
-- `/8` Support and contact
-- `/404` 404 error
-- `/error` Other error
+- `/8` Support and Contact
+- `/404` 404 Error
+- `/error` Other Error
 
 ## Setup
 
