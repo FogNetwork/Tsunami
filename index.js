@@ -6,7 +6,7 @@ const port = config.port
 app.use(express.static('./public'));
 
 app.get('/', function(req, res){
-  res.sendFile(‘index.html’, {root: ‘./public’})
+    res.sendFile('index.html');
 }); 
 
 app.listen(port, () => {
