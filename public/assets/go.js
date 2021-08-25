@@ -11,7 +11,7 @@ search.addEventListener('keyup', function onEvent(e) {
 function go(url) {
 if (url !== '') {
 if (url.includes('.')) {
-open('https://' + url)
+open(url)
 } else if (url.startsWith('https://')) {
 open(url)
 } else if (url.startsWith('http://')) {
@@ -25,10 +25,6 @@ return false;
 }
 
 function open(url) {
-alert(url)
-}
-
-function open2(url) {
 var surf = document.getElementById("surf");
 surf.style.display = "initial";
 surf.setAttribute("src", "");
