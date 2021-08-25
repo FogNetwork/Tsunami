@@ -12,7 +12,7 @@ app.get('/', function(req, res){
 }); 
 
 app.use(function(req,res){
-    res.status(404).render('404.html');
+    res.status(404).render('404.html', {root: './public'});
 });
 
 app.listen(port, () => {
