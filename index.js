@@ -11,7 +11,7 @@ app.get('/', function(req, res){
     res.sendFile('index.html', {root: './public'});
 }); 
 
-app.use(function(req,res){
+app.get('*', function(req, res){
     res.status(404).render('404.html', {root: './public'});
 });
 
