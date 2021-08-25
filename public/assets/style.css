@@ -159,6 +159,8 @@ height: 38px;
 display: flex;
 margin-right: 3px;
 margin-left: 3px;
+align-items: center;
+justify-content: center;
 }
 
 
