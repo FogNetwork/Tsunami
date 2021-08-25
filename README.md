@@ -9,7 +9,7 @@
 <h3>An official Fog Network proxy site, made to access the blocked web</h3>
 
 <p>Surf without web filters like Securly, iBoss, and GoGuardian.
-Made with style, Tsunami includes many features protecting your freedom from censorship
+Made with style, Tsunami includes many features protecting your freedom from censorship.
 Read the documentation below to find out more</p>
 
 <p>Want to inprove Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
