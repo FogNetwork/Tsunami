@@ -11,6 +11,10 @@ app.get('/', function(req, res){
     res.sendFile('index.html', {root: './public'});
 }); 
 
+app.use(function(req,res){
+    res.status(404).render('404.html');
+});
+
 app.listen(port, () => {
   console.log(`Server running at localhost:${port}`)
 })
