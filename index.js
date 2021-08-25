@@ -17,8 +17,4 @@ app.listen(port, () => {
 
 app.use(function (req, res) {
     res.status(404).sendFile('404.html', {root: './public'});
-    res.status(500).sendFile('error.html', {root: './public'});
-    res.status(403).sendFile('error.html', {root: './public'});
-    res.status(400).sendFile('error.html', {root: './public'});
-
 });
