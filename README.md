@@ -143,23 +143,25 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 ### Credits
 
-[Nebelung](https://github.com/Nebelung-Dev) - Owner and main devoper
-
-[Caracal.js](https://github.com/caracal-js) - Proxy developer
+[Nebelung](https://github.com/Nebelung-Dev) - Owner and Main Developer
 
 [Quite A Fancy Emerald](https://github.com/QuiteAFancyEmerald) - Holy Unblocker King
 
-[MikeLime](https://github.com/MikeLime-dev) - Proxy developer
+[Caracal.js](https://github.com/caracal-js) - Proxy Developer
+
+[MikeLime](https://github.com/MikeLime-dev) - Proxy Developer
 
 [BinBashBanana](https://github.com/BinBashBanana) - Game Library and PyDodge 
 
 [Binary Person](https://github.com/binary-person) - Creator of Womginx
 
-[Divide](https://github.com/vibedivide) - Chatbox and SystemYA craeter
+[Divide](https://github.com/vibedivide) - Chatbox Guy
 
-[EnderKingJ](https://github.com/EnderKingJ) - Proxy maker
+[Shirt](https://github.com/shirt-dev) - Proxy Developer
 
-[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS Game
+[EnderKingJ](https://github.com/EnderKingJ) - Proxy Maker
+
+[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
 
 ### Issues and Pulls Guide
 
