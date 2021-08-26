@@ -15,14 +15,14 @@ If a site is blocked, join our discord for more links
 
 **Before creating a pull read the following:**
 
-- The request has no errors or bugs
-- Is is something needed
-- The pull does not include anything major
+The request has no errors or bugs
+Is is something needed
+The pull does not include anything major
 
 ### Game Requests
 
-**When making a game request please use the game request [label](https://github.com/FogNetwork/Tsunami/issues/new?assignees=&labels=game+request&template=game-request.md&title=)**
+**When making a game request please fill out this [form](https://github.com/FogNetwork/Tsunami/issues/new?assignees=&labels=game+request&template=game-request.yml)**
 
-Game requests must have a link to the game source (html, flash, or rom)
+Game requests must have a link to the game source (game, retro, or emulator)
 
-Most big games cannot be added
+Official games like minecraft cannot be added
