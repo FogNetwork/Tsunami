@@ -203,7 +203,7 @@ height: 100%;
 .game {
 width: 230px;
 height: 310px;
-border-radius: 10px;
+border-radius: 8px;
 cursor: pointer;
 border: 1px solid white;
 display: inline-block;
@@ -213,18 +213,39 @@ margin-top: 15px;
 margin-bottom: 15px;
 }
 
-.gametype {
-width: 100%;
+.searchgames {
+width: 70%;
 height: 30px;
 margin-top: 75px;
 margin-bottom: 5px;
-display: flex;
-justify-content: center;
+outline: none;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 5px;
+padding-left: 8px;
+border: 1.5px solid white;
+font-size: 16px;
+height: 30px;
+background-color: rgb(16,16,16,0);
 }
 
-.typegame, .typeflash, .typeemu {
+.gameimg {
+width: 100%;
+height: 265px;
+border-bottom: 1px solid white;
+border-radius: 8px 8px 0px 0px;
+object-fit: cover;
+}
+
+.gameinfo {
+width: 100%;
+text-align: center;
+text-overflow: ellipsis;
+font-size: 14px;
+overflow: hidden;
+text-overflow: ellipsis;
 color: white;
-margin: 5px;
-border: 3px solid var(--light);
-border-radius: 2.5px;
+font-size: 16px;
+line-height: 35px;
 }
