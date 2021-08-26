@@ -249,3 +249,16 @@ color: white;
 font-size: 16px;
 line-height: 35px;
 }
+
+.notfoundtext {
+margin-top: 75px;
+color: white;
+text-align: center;
+font-size: 45px;
+}
+
+.notfoundtext2 {
+color: white;
+text-align: center;
+font-size: 16px;
+}
