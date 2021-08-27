@@ -16,10 +16,6 @@ app.listen(port, () => {
   console.log(`Server running at localhost:${port}`)
 })
 
-app.use(function (req, res) {
-        if (req.url.startsWith("/corrosion/")) return proxy.request(req, res);
-    res.status(404).sendFile('404.html', {root: './public'});
-});
 
 const proxy = new corrosion({
     prefix: '/corrosion/',
@@ -31,4 +27,9 @@ const proxy = new corrosion({
             'accounts.google.com',
         ], 'Page is blocked'),
     ],
+});
+
+app.use(function (req, res) {
+        if (req.url.startsWith("/corrosion/")) return proxy.request(req, res);
+    res.status(404).sendFile('404.html', {root: './public'});
 });
