@@ -269,7 +269,7 @@ text-align: center;
 font-size: 35px;
 }
 
-.settab3 {
+.settab8 {
 width: 30%;
 margin-top: 14px;
 outline: none;
@@ -294,4 +294,27 @@ font-size: 15px;
 height: 38px;
 background-color: rgb(16,16,16,0);
 cursor: pointer;
+}
+
+.settabs {
+display: flex;
+flex-direction: row;    
+justify-content: center; 
+align-items: center;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.settab3, .settab4, .settab5, .settab6, .settab7 {
+margin-left: 5px;
+margin-right: 5px;
+cursor: pointer;
+border-radius: 50%;
+border: 1px solid rgb(255, 255, 255, .5);
+height: 40px;
+width: 40px;
+}
+
+.setimg {
+height: 28px;
 }
