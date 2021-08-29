@@ -8,8 +8,7 @@
 
 <h3>An official Fog Network proxy site, made to access the blocked web</h3>
 
-<p>Surf without web filters like Securly, iBoss, and GoGuardian.
-Made with style, Tsunami includes many features, protecting your freedom from censorship.
+<p>Surf without web filters or restrictions. Made with style, Tsunami is dedicated to protecting your freedom from censorship.
 Read the documentation below to find out more</p>
 
 <p>Want to inprove Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
@@ -145,21 +144,21 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 [Nebelung](https://github.com/Nebelung-Dev) - Owner and Main Developer
 
+[EnderKingJ](https://github.com/EnderKingJ) - Proxy Developer
+
 [Quite A Fancy Emerald](https://github.com/QuiteAFancyEmerald) - Holy Unblocker King
 
 [Caracal.js](https://github.com/caracal-js) - Proxy Developer
 
-[MikeLime](https://github.com/MikeLime-dev) - Proxy Developer
+[MikeLime](https://github.com/MikeLime-dev) - Developer
 
 [BinBashBanana](https://github.com/BinBashBanana) - Game Library and PyDodge 
 
 [Binary Person](https://github.com/binary-person) - Creator of Womginx
 
-[Divide](https://github.com/vibedivide) - Chatbox Guy
+[Divide](https://github.com/vibedivide) - SystemYA Chatbox
 
 [Shirt](https://github.com/shirt-dev) - Proxy Developer
-
-[EnderKingJ](https://github.com/EnderKingJ) - Proxy Maker
 
 [Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
 
