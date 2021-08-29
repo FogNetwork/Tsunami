@@ -318,3 +318,11 @@ width: 40px;
 .setimg {
 height: 28px;
 }
+
+.gamesep {
+width: 90%;
+height: 1px;
+background-color: white;
+margin-top: 10px;
+margin-bottom: 10px;
+}
