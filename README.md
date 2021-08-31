@@ -68,7 +68,6 @@ Read the documentation below to find out more</p>
 - `/7` Credits
 - `/8` Support and Contact
 - `/404` 404 Error
-- `/error` Other Error
 
 ## Setup
 
