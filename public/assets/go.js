@@ -30,6 +30,7 @@ var closesurf = document.getElementById("closesurf");
 surf.style.display = "initial";
 closesurf.style.display = "initial";
 surf.setAttribute("src", url);
+surf.value = "";
 }
     
 };
