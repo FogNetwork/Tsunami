@@ -173,6 +173,7 @@ bottom: 0;
 border: none;
 z-index: 10;
 display: none;
+background: white;
 }
 
 #closesurf {
