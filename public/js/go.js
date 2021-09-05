@@ -27,8 +27,10 @@ return false;
 function open(url) {
 var surf = document.getElementById("surf");
 var closesurf = document.getElementById("closesurf");
+var reloadsurf = document.getElementById("reloadsurf");
 surf.style.display = "initial";
 closesurf.style.display = "initial";
+reloadsurf.style.display = "initial";
 surf.setAttribute("src", url);
 document.getElementById("search").value = "";
 }
@@ -38,7 +40,14 @@ document.getElementById("search").value = "";
 function closesurf() {
 var surf = document.getElementById("surf");
 var closesurf = document.getElementById("closesurf");
+var reloadsurf = document.getElementById("reloadsurf");
 surf.style.display = "none";
 closesurf.style.display = "none";
+reloadsurf.style.display = "none";
 surf.setAttribute("src", "");
+}
+
+function reloadsurf() {
+var surf = document.getElementById("surf");
+surf.src += '';
 }
