@@ -1,7 +1,7 @@
 <div align="center">
 
 <kbd>
-<img style="border-radius:50%" height="150px" src="https://avatars.githubusercontent.com/u/87547936?s=200&v=4">
+<img style="border-radius:50%" height="150px" src="https://raw.githubusercontent.com/FogNetwork/Tsunami/main/public/img/logo.png">
 </kbd>
 
 <h1>Tsunami</h1>
