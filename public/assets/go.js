@@ -26,8 +26,17 @@ return false;
 
 function open(url) {
 var surf = document.getElementById("surf");
+var close-surf = document.getElementById("close-surf");
 surf.style.display = "initial";
+close-surf.style.display = "initial";
 surf.setAttribute("src", url);
 }
     
 };
+
+function closesurf() {
+var surf = document.getElementById("surf");
+var close-surf = document.getElementById("close-surf");
+surf.style.display = "none";
+close-surf.style.display = "none";
+}
