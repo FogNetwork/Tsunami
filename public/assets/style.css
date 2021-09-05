@@ -179,14 +179,14 @@ display: none;
 position: absolute;
 top: 65px; 
 right: 10px; 
-border: 2px solid black;
-color: white;
-border-radius: 50%;
+background-color: black;
+border-radius: 2.5px;
 height: 40px;
 width: 40px;
 text-align: center;
 display: none;
 z-index: 11;
+cursor: pointer;
 }
 
 #closeicon {
