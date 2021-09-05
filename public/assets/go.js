@@ -1,5 +1,3 @@
-document.getElementById("search").focus();
-
 window.onload = function() {
     
 search = document.getElementById("search");
