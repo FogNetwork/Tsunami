@@ -1,3 +1,5 @@
+document.getElementById("search").focus();
+
 window.onload = function() {
     
 search = document.getElementById("search");
@@ -30,7 +32,7 @@ var closesurf = document.getElementById("closesurf");
 surf.style.display = "initial";
 closesurf.style.display = "initial";
 surf.setAttribute("src", url);
-surf.value = "";
+document.getElementById("search").value = "";
 }
     
 };
