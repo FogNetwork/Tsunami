@@ -40,4 +40,5 @@ var surf = document.getElementById("surf");
 var closesurf = document.getElementById("closesurf");
 surf.style.display = "none";
 closesurf.style.display = "none";
+surf.setAttribute("src", "");
 }
