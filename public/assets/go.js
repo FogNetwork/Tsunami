@@ -26,7 +26,7 @@ return false;
 
 function open(url) {
 var surf = document.getElementById("surf");
-var close-surf = document.getElementById("closesurf");
+var closesurf = document.getElementById("closesurf");
 surf.style.display = "initial";
 closesurf.style.display = "initial";
 surf.setAttribute("src", url);
@@ -36,7 +36,7 @@ surf.setAttribute("src", url);
 
 function closesurf() {
 var surf = document.getElementById("surf");
-var close-surf = document.getElementById("closesurf");
+var closesurf = document.getElementById("closesurf");
 surf.style.display = "none";
 closesurf.style.display = "none";
 }
