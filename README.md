@@ -11,7 +11,7 @@
 <p>Surf without web filters or restrictions. Made with style, Tsunami is dedicated to protecting your freedom from censorship.
 Read the documentation below to find out more</p>
 
-<p>Want to inprove Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
+<p>Want to improve Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
   
 <a href="https://heroku.com/deploy?template=https://github.com/FogNetwork/Tsunami" title="Deploy to Heroku"><img alt="Deploy to Heroku" src="https://github.com/FogNetwork/Tsunami/raw/main/deploy/heroku.svg" width="140" height="30"><img></a>
 &nbsp;
@@ -55,6 +55,7 @@ Read the documentation below to find out more</p>
 - Nice game library
 - Chatbox connected to discord
 - Tab cloaking and other cool features
+- Also looks good
 
 ## Pages
 
@@ -70,6 +71,8 @@ Read the documentation below to find out more</p>
 - `/404` 404 Error
 
 ## Setup
+
+**Please Note: Womginx and PyDodgee will not work without deploying are hosted on subdomains, see [proxies](#proxies) for more info**
 
 ### Locally
 
@@ -89,11 +92,11 @@ npm start
 
 Click one of the buttons above and follow the steps
 
-Not all proxies will work so make sure to deploy the proxies too
-
 ### Proxies
 
-Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example w.example.com for Womginx
+Some of the proxies on Tsunami are hosted on subdomains, deploy the correct proxy for Tsunami to work
+
+Smoke and Corrosion are hosted locally, so you don't need a subdomain
 
 [w.example.com (Womginx)](https://github.com/binary-person/womginx)
 
