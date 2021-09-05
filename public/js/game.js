@@ -1,6 +1,6 @@
 function searchgames() {
   var searchgames = document.getElementById("searchgames");
-  var filter = search.value.toLowerCase();
+  var filter = searchgames.value.toLowerCase();
   var game = document.getElementsByClassName('game');
 
   for (i = 0; i < game.length; i++) {
