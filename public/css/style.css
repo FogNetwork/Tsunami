@@ -183,15 +183,29 @@ background: white;
 }
 
 #closesurf {
+display: none;
 position: absolute;
-top: 65px; 
+top: 70px; 
 right: 10px; 
 background-color: black;
 border-radius: 2.5px;
 height: 40px;
 width: 40px;
 text-align: center;
+z-index: 11;
+cursor: pointer;
+}
+
+#reloadsurf {
 display: none;
+position: absolute;
+top: 70px; 
+right: 60px; 
+background-color: black;
+border-radius: 2.5px;
+height: 40px;
+width: 40px;
+text-align: center;
 z-index: 11;
 cursor: pointer;
 }
@@ -199,6 +213,12 @@ cursor: pointer;
 #closeicon {
 color: white;
 font-size: 30px;
+line-height: 40px;
+}
+
+#reloadicon {
+color: white;
+font-size: 25px;
 line-height: 40px;
 }
 
