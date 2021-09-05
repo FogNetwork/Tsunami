@@ -79,8 +79,15 @@ color: #3377ff;
 color: white;
 font-size: 60px;
 text-align: center;
-margin-top: 250px;
+margin-top: 255px;
 margin-bottom: 20px;
+}
+
+.homelogo {
+text-align: center;
+position: fixed;
+top: 75px;
+width: 100%
 }
 
 .search {
@@ -98,7 +105,7 @@ color: white;
 
 .searchicon {
 position: absolute;
-top: 355px;
+top: 360px;
 margin-left: 12px;
 color: #666666;
 font-size: 18px;
