@@ -27,7 +27,7 @@ return false;
 function open(url) {
 var surf = document.getElementById("surf");
 surf.style.display = "initial";
-surf.setAttribute("src", "");
+surf.setAttribute("src", url);
 }
     
 };
