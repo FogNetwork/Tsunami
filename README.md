@@ -164,3 +164,5 @@ Try using womginx or Corrosion. Refreshing the page might help
 ### Issues and Pulls Guide
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
+
+Quite A Fancy Emerald, you are a big inspiration
