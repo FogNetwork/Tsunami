@@ -175,7 +175,7 @@ z-index: 10;
 display: none;
 }
 
-#close-surf {
+#closesurf {
 position: absolute;
 top: 65px; 
 right: 10px; 
@@ -189,7 +189,7 @@ display: none;
 z-index: 11;
 }
 
-#close-icon {
+#closeicon {
 color: white;
 font-size: 30px;
 line-height: 40px;
