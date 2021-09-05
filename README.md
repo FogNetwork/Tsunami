@@ -89,19 +89,19 @@ npm start
 
 Click one of the buttons above and follow the steps
 
+Not all proxies will work so make sure to deploy the proxies too
+
 ### Proxies
 
-Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example c.example.com for Corrosion
-
-[s.example.com (Smoke)](https://github.com/FogNetwork/Smoke)
-
-[c.example.com (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
-
-[a.example.com (Alloy)](https://github.com/titaniumnetwork-dev/alloy)
+Tsunami's proxies are hosted on subdomains, deploy the the proxies below to the correct subdomain. For example w.example.com for Womginx
 
 [w.example.com (Womginx)](https://github.com/binary-person/womginx)
 
 [p.example.com (PyDodge)](https://github.com/BinBashBanana/PyDodge)
+
+[Locally (Smoke)](https://github.com/FogNetwork/Smoke)
+
+[Locally (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
 
 ## FAQ
 
@@ -125,11 +125,11 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 [Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)
 
-[Alloy](https://github.com/titaniumnetwork-dev/alloy)
-
 [Womginx](https://github.com/binary-person/womginx)
 
 [PyDodge](https://github.com/BinBashBanana/PyDodge)
+
+[Alloy](https://github.com/titaniumnetwork-dev/alloy) (Not Used)
 
 [SystemYA](https://github.com/sysce/proxy) (Not Used)
 
