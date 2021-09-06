@@ -196,7 +196,7 @@ background: white;
 
 #closesurf {
 display: none;
-position: absolute;
+position: fixed;
 top: 70px; 
 right: 10px; 
 background-color: black;
@@ -224,7 +224,7 @@ cursor: pointer;
 
 #closearcade {
 display: none;
-position: absolute;
+position: fixed;
 top: 70px; 
 right: 10px; 
 background-color: black;
@@ -250,7 +250,7 @@ line-height: 40px;
 
 #closearcadeicon {
 color: white;
-font-size: 20px;
+font-size: 30px;
 line-height: 40px;
 }
 
