@@ -22,7 +22,7 @@ function settitle(title) {
   document.title = title
   } else {
   localStorage.removeItem("title")
-  document.title = title
+  document.title = ""
   }
 }
 
@@ -32,6 +32,6 @@ function setfavicon(icon) {
   document.querySelector("link[rel='shortcut icon']").href = icon;
   } else {
   localStorage.removeItem("favicon")
-  document.querySelector("link[rel='shortcut icon']").href = icon;
+  document.querySelector("link[rel='shortcut icon']").href = "";
   }
 }
