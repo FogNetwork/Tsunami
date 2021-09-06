@@ -25,7 +25,7 @@ function settitle(title) {
 }
 
 function setfavicon(icon) {
-  if icon !== "" {
+  if (icon !== "") {
   localStorage.setItem("favicon", icon)
   document.querySelector("link[rel='shortcut icon']").href = icon;
   }
