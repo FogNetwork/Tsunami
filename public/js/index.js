@@ -7,7 +7,6 @@
 
 var title = localStorage.getItem("title")
 var favicon = localStorage.getItem("favicon")
-var settab8 = document.getElementById("settab8").value
 
 if (localStorage.hasOwnProperty("title")) {
     document.title = title
