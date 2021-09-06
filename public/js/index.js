@@ -17,11 +17,15 @@ if (localStorage.hasOwnProperty("favicon")) {
 }
 
 function settitle(title) {
+  if (title !== "") {
   localStorage.setItem("title", title)
   document.title = title
+  }
 }
 
 function setfavicon(icon) {
+  if icon !== "" {
   localStorage.setItem("favicon", icon)
   document.querySelector("link[rel='shortcut icon']").href = icon;
+  }
 }
