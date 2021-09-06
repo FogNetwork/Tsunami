@@ -18,8 +18,10 @@ if (localStorage.hasOwnProperty("favicon")) {
 
 function settitle(title) {
   localStorage.setItem("title", title)
+  document.title = title
 }
 
 function setfavicon(icon) {
   localStorage.setItem("favicon", icon)
+  document.querySelector("link[rel='shortcut icon']").href = icon;
 }
