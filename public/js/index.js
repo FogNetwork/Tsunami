@@ -20,12 +20,18 @@ function settitle(title) {
   if (title !== "") {
   localStorage.setItem("title", title)
   document.title = title
+  } else {
+  localStorage.setItem("title", "")
+  document.title = title 
   }
 }
 
 function setfavicon(icon) {
   if (icon !== "") {
   localStorage.setItem("favicon", icon)
+  document.querySelector("link[rel='shortcut icon']").href = icon;
+  } else {
+  localStorage.setItem("favicon", "")
   document.querySelector("link[rel='shortcut icon']").href = icon;
   }
 }
