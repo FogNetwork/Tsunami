@@ -11,3 +11,19 @@ function searchgames() {
     }
   }
 }
+
+function opengame(game) {
+var arcade = document.getElementById("arcade");
+var closearcade = document.getElementById("closearcade");
+arcade.style.display = "initial";
+closearcade.style.display = "initial";
+arcade.setAttribute("src", game);
+}
+    
+function closegame() {
+var arcade = document.getElementById("arcade");
+var closearcade = document.getElementById("closearcade");
+arcade.style.display = "none";
+closearcade.style.display = "none";
+arcade.setAttribute("src", "");
+}
