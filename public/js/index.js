@@ -21,8 +21,8 @@ function settitle(title) {
   localStorage.setItem("title", title)
   document.title = title
   } else {
-  localStorage.setItem("title", "")
-  document.title = title 
+  localStorage.removeItem("title")
+  document.title = document.title 
   }
 }
 
@@ -31,7 +31,7 @@ function setfavicon(icon) {
   localStorage.setItem("favicon", icon)
   document.querySelector("link[rel='shortcut icon']").href = icon;
   } else {
-  localStorage.setItem("favicon", "")
-  document.querySelector("link[rel='shortcut icon']").href = icon;
+  localStorage.removeItem("favicon")
+  document.querySelector("link[rel='shortcut icon']").href = document.querySelector("link[rel='shortcut icon']").href;
   }
 }
