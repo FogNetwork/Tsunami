@@ -84,7 +84,7 @@ margin-bottom: 20px;
 }
 
 .homelogo {
-position: fixed;
+position: absolute;
 top: 75px;
 width: 100%
 }
@@ -301,7 +301,6 @@ object-fit: cover;
 .gameinfo {
 width: 100%;
 text-align: center;
-text-overflow: ellipsis;
 font-size: 14px;
 overflow: hidden;
 text-overflow: ellipsis;
