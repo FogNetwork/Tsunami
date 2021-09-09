@@ -8,10 +8,11 @@ body:
       label: Game Type
       multiple: false
       options:
-        - Game
-        - Flash
-        - Rom
         - Emulator
+        - Game
+        - Web
+        - Flash
+        - Retro (Rom)
   - type: input
     id: gameurl
     attributes:

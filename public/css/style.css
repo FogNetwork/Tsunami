@@ -280,7 +280,6 @@ margin-top: 75px;
 margin-bottom: 5px;
 outline: none;
 color: white;
-border: none;
 border-radius: 5px;
 padding: 5px;
 padding-left: 8px;
@@ -301,7 +300,6 @@ object-fit: cover;
 .gameinfo {
 width: 100%;
 text-align: center;
-font-size: 14px;
 overflow: hidden;
 text-overflow: ellipsis;
 color: white;
@@ -326,7 +324,6 @@ width: 30%;
 margin-top: 14px;
 outline: none;
 color: white;
-border: none;
 border-radius: 5px;
 padding: 3px;
 padding-left: 8px;
@@ -389,6 +386,6 @@ font-size: 40px;
 .body {
 color: white;
 text-align: center;
-font-size: 15px;
+font-size: 20px;
 margin-top: 7px;
 }
