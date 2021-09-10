@@ -74,7 +74,3 @@ function goinfo() {
     isinfo = "no"
   }
 }
-
-function info() {
-  alert()
-}
