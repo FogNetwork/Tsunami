@@ -61,3 +61,20 @@ function setreset() {
   localStorage.removeItem("favicon")
   location.reload();
 }
+
+var info = document.getElementById("info")
+var isinfo = "no"
+
+function goinfo() {
+  if (isinfo == "no") {
+    document.getElementById("info").style.display = "flex"
+    isinfo = "yes"
+  } else {
+    document.getElementById("info").style.display = "none"
+    isinfo = "no"
+  }
+}
+
+function info() {
+  alert()
+}

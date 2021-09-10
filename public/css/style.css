@@ -167,6 +167,7 @@ margin-right: 3px;
 margin-left: 3px;
 align-items: center;
 justify-content: center;
+cursor: pointer;
 }
 
 
@@ -388,4 +389,30 @@ color: white;
 text-align: center;
 font-size: 20px;
 margin-top: 7px;
+}
+
+#info {
+position: fixed;
+bottom: 80px;
+justify-content: center;
+align-items: center;
+width: 150px;
+height: 40px;
+background: transparent;
+right: 0;
+left: 0;
+margin-right: auto;
+margin-left: auto;
+border: 1px solid rgb(255, 255, 255, .2);
+border-radius: 2.5px;
+text-align: center;
+color: white;
+display: none;
+}
+
+.infoitem {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
