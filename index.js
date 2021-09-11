@@ -6,8 +6,28 @@ MIT license: http://opensource.org/licenses/MIT
 
 const express = require('express')
 const app = express()
+const basicAuth = require('express-basic-auth');
 const config = require('./config.json')
 const port = process.env.PORT || config.port
+const auth = config.auth
+const username = config.username
+const password = config.password
+const users = {};
+users[username] = password;
+
+if (auth == "true") { 
+app.use(basicAuth({
+    users,
+    challenge: true,
+    unauthorizedResponse: autherror
+}));
+}
+
+function autherror(req) {
+    return req.auth
+        ? ('Credentials ' + req.auth.user + ':' + req.auth.password + ' rejected')
+        : 'Error'
+}
 
 app.use(express.static('./public', {
     extensions: ['html', 'htm']

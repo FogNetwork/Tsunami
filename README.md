@@ -30,6 +30,7 @@ Read the documentation below to find out more</p>
   - [Locally](#locally)
   - [Deploy](#deploy)
   - [Proxies](#proxies)
+  - [Config](#config)
 - [FAQ](#faq)
 - [More](#more)
   - [Proxy Sources](#proxy-sources)
@@ -105,6 +106,25 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 [Locally (Smoke)](https://github.com/FogNetwork/Smoke)
 
 [Locally (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
+
+### Config
+
+```json
+{
+    "port": "8080",
+    "auth": "false",
+    "username": "user",
+    "password": "secret"
+}
+```
+
+`"port": "8080"` Changes the port 
+
+`"auth": "false"` Basic authentication, set to true of false
+
+`"username"` Username for authentication
+
+`"password"` Password for authentication
 
 ## FAQ
 

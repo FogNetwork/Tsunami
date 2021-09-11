@@ -22,9 +22,10 @@
     "license": "MIT",
     "dependencies": {
         "express": "^4.17.1",
-        "corrosion": "^1.0.0",
         "alloyproxy": "^1.1.0",
+        "corrosion": "^1.0.0",
         "sys-proxy": "^1.0.3",
-        "unblocker": "^2.3.0"
+        "unblocker": "^2.3.0",
+        "express-basic-auth": "^1.2.0"
     }
 }

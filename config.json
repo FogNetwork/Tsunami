@@ -1,3 +1,6 @@
 {
-    "port": "8080"
+    "port": "8080",
+    "auth": "false",
+    "username": "user",
+    "password": "secret"
 }
