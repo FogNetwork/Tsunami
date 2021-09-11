@@ -7,7 +7,7 @@ Please read these rules and guidelines before creating a issue or pull
 
 Make sure your issue is valid, before posting it
 
-Proxy issues may not be fixed as we dont own all the proxies
+Proxy issues may not be fixed as we don't own all the proxies
 
 If a site is blocked, join our discord for more links
 
@@ -27,4 +27,4 @@ And does not change anything like the logo or title
 
 Game requests must have a link to the game source (emulator, game, web, flash, or retro)
 
-Official games like minecraft cannot be added
+Big games like minecraft cannot be added

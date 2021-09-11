@@ -1,7 +1,7 @@
 /*
 Copyright © Fog Network
 Made by Nebelung
-MIT license: http://opensource.org/licenses/MIT
+MIT license: https://opensource.org/licenses/MIT
 */
 
 const express = require('express')
@@ -42,5 +42,5 @@ app.use(function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at localhost:${port}`)
+  console.log(`Tsunami is running at localhost:${port}`)
 })

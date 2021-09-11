@@ -31,11 +31,13 @@ Read the documentation below to find out more</p>
   - [Deploy](#deploy)
   - [Proxies](#proxies)
   - [Config](#config)
-- [FAQ](#faq)
+- [Support](#support)
+  - [FAQ](#faq)
+  - [Contact](#contact)
 - [More](#more)
   - [Proxy Sources](#proxy-sources)
   - [Credits](#credits)
-  - [Issues and Pulls Guide](#issues-and-pulls-guide)
+  - [Contributing](#contributing)
 
 ## Overview
 
@@ -126,7 +128,9 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 
 `"password"` Password for authentication
 
-## FAQ
+## Support
+
+### FAQ
 
 **How can I get new domains?**
 
@@ -139,6 +143,10 @@ Captcha is only supported on womginx, though the support is limited
 **Why is Discord not working properly?**
 
 Try using womginx or Corrosion. Refreshing the page might help
+
+### Contact
+
+Nebelung - Discord Coming Soon!
 
 ## More
 
@@ -184,8 +192,8 @@ Try using womginx or Corrosion. Refreshing the page might help
 
 [Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
 
-### Issues and Pulls Guide
+### Contributing
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
 
-Quite A Fancy Emerald, you are a big inspiration
+Quite A Fancy Emerald, Inspiration for Tsunami
