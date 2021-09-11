@@ -12,8 +12,8 @@ const port = process.env.PORT || config.port
 const auth = config.auth
 const username = config.username
 const password = config.password
-const users = {};
-users[username] = password;
+const users = {}
+users[username] = password
 
 if (auth == "true") { 
 app.use(basicAuth({

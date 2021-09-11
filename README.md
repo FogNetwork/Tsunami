@@ -196,4 +196,4 @@ Nebelung - Discord Coming Soon!
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
 
-Quite A Fancy Emerald, Inspiration for Tsunami
+Thank You: Quite A Fancy Emerald, Inspiration for Tsunami

@@ -109,33 +109,6 @@ top: 388px;
 margin-left: 12px;
 color: #666666;
 font-size: 22px;
-cursor: pointer;
-}
-
-.proxy {
-border-radius: 5px;
-border: 2.5px solid white;
-font-size: 16px;
-padding-top: 15px;
-width: 78px;
-height: 35px;
-background-color: rgb(16,16,16,0);
-color: white;
-margin: 5px;
-margin-top: 15px;
-cursor: pointer;
-}
-
-.proxysel {
-color: black;
-background-color: white;
-}
-
-.proxies {
-display: flex;
-flex-direction: row;    
-justify-content: center; 
-align-items: center;
 }
 
 #chatbox {
@@ -413,8 +386,36 @@ display: none;
 }
 
 .infoitem {
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 16px;
-  cursor: pointer;
+margin-left: 5px;
+margin-right: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.proxies {
+display: flex;
+flex-direction: row;    
+justify-content: center; 
+align-items: center;
+}
+
+.proxy {
+border-radius: 5px;
+border: 2.5px solid white;
+font-size: 16px;
+padding: 5px;
+padding-top: 10px;
+padding-bottom: 0;
+width: 70px;
+height: 30px;
+background-color: rgb(16,16,16,0);
+color: white;
+margin: 5px;
+margin-top: 15px;
+cursor: pointer;
+}
+
+.proxysel {
+color: black;
+background-color: white;
 }
