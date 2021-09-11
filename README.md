@@ -58,6 +58,7 @@ Read the documentation below to find out more</p>
 - Nice game library
 - Chatbox connected to discord
 - Tab cloaking and other cool features
+- Basic auth
 - Also looks good
 
 ## Pages
