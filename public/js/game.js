@@ -27,3 +27,9 @@ arcade.style.display = "none";
 closearcade.style.display = "none";
 arcade.setAttribute("src", "");
 }
+
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 27){
+        closegame()
+    }
+});

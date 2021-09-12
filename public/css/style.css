@@ -175,7 +175,7 @@ display: none;
 position: fixed;
 top: 70px; 
 right: 10px; 
-background-color: black;
+background-color: #2493ff;
 border-radius: 2.5px;
 height: 40px;
 width: 40px;
@@ -189,7 +189,7 @@ display: none;
 position: absolute;
 top: 70px; 
 right: 60px; 
-background-color: black;
+background-color: #2493ff;
 border-radius: 2.5px;
 height: 40px;
 width: 40px;
@@ -203,7 +203,7 @@ display: none;
 position: fixed;
 top: 70px; 
 right: 10px; 
-background-color: black;
+background-color: #2493ff;
 border-radius: 2.5px;
 height: 40px;
 width: 40px;
@@ -213,19 +213,19 @@ cursor: pointer;
 }
 
 #closeicon {
-color: white;
+color: black;
 font-size: 30px;
 line-height: 40px;
 }
 
 #reloadicon {
-color: white;
+color: black;
 font-size: 25px;
 line-height: 40px;
 }
 
 #closearcadeicon {
-color: white;
+color: black;
 font-size: 30px;
 line-height: 40px;
 }

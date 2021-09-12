@@ -105,3 +105,9 @@ womginx.classList.remove("proxysel")
 pydodge.classList.add("proxysel")
 }
 }
+
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 27){
+        closesurf()
+    }
+});
