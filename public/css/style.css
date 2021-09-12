@@ -346,8 +346,8 @@ height: 28px;
 
 .gamesep {
 width: 90%;
-height: 1px;
-background-color: white;
+height: 10px;
+background-color: transparent;
 margin-top: 10px;
 margin-bottom: 10px;
 }
