@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link media="screen" href="css/main.css" rel="stylesheet" type="text/css" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="img/touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" />
+
+        <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="js/gamejs/yabble.js"></script>
+        <script type="text/javascript" src="js/gamejs/gamejs.min.js"></script>
+        <script type="text/javascript" src="js/lib/utils.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var gamejs;
+                require.setModuleRoot('./js/');
+                require.run('main');
+            });
+        </script>
+        <title>Alge's Escapade</title>
+    </head>
+    <body>
+        <div id="preload">
+            <img src="img/loading.gif" />
+            <img src="img/loading-text.png" />
+        </div>
+        <div id="gameWindow">
+            <canvas id="gjs-canvas"></canvas>
+            <div id="gameEnd"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,201 @@
+body
+{
+    background-color:#ECECEC;
+    overflow:hidden;
+}
+
+#preload, #gameWindow
+{
+    margin:auto;
+}
+
+#gameWindow
+{
+    padding:19px 29px;
+    width:800px;
+    height:600px;
+    background-image:url('../img/game-window.png');
+    background-repeat:no-repeat;
+    display:none;
+}
+
+canvas
+{
+   -moz-box-shadow:    0 0 10px #000000;
+   -webkit-box-shadow: 0 0 10px #000000;
+   box-shadow:         0 0 10px #000000;
+}
+
+#gameEnd
+{
+    position:relative;
+    display:none;
+    width:800px;
+    height:600px;
+    background-image:url('../img/end.png');
+    top:-604px;
+}
+
+#preload
+{
+    padding-top:250px;
+    width:800px;
+    height:600px;
+    text-align:center;
+}
+
+#preload img
+{
+    display:block;
+    margin: auto;
+}
+
+#game_tooltip
+{
+    position:relative;
+    width:800px;
+    background: -webkit-linear-gradient(#ECECEC, #CACACA);
+    background: -moz-linear-gradient(#ECECEC, #CACACA);
+    background: -o-linear-gradient(#ECECEC, #CACACA);
+    background: -ms-linear-gradient(#ECECEC, #CACACA);
+    background: linear-gradient(#ECECEC, #CACACA);
+    border-bottom: 1px solid #9A9A9A;
+    border-radius: 0px 0px 10px 10px;
+    color:#585351;
+    text-shadow: 0px 1px 0px white;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-weight: bold;
+    text-align: center;
+    top:-605px;
+    display:none;
+}
+
+#game_scorecard_bg
+{
+    position:relative;
+    width:800px;
+    height:600px;
+    top:-624px;
+    background-color: rgba(0,0,0,0.4);
+    display:none;
+}
+
+#game_scorecard
+{
+    background-image:url('../img/scorecard-background.png');
+    position:relative;
+    top:68px;
+    left:140px;
+    width:500px;
+    height:460px;
+    z-index: 999;
+    font-family: Helvetica,arial,sans-serif;
+}
+
+#game_scorecard h1
+{
+    font-size:30px;
+    text-transform:uppercase;
+    padding-top:37px;
+    margin-left:41px;
+}
+
+#game_scorecard p
+{
+    font-size:20px;
+    font-weight: bold;
+    margin-left:38px;
+    border-bottom:1px solid #000000;
+    width:418px;
+    margin-top:10px;
+}
+
+#game_scorecard p.scoreholder
+{
+    height:38px;
+}
+
+#game_scorecard p span
+{
+    float:right;
+}
+
+
+#game_scorecard .score .star
+{
+    width:42px;
+    height:41px;
+    background-image:url(../img/star-off.png);
+    background-repeat: no-repeat;
+    float:left;
+    position:relative;
+    top:-10px;
+}
+
+#game_scorecard .score .star.enabled
+{
+    background-image:url(../img/star-on.png);
+}
+
+#game_scorecard .nextLevel,
+#game_scorecard .resetLevel,
+#game_scorecard .mainMenu
+{
+    display:block;
+    font-size:-1px;
+    text-indent:-9999px;
+    outline: none;
+    background-repeat:no-repeat;
+    position:relative;
+    margin-top:60px;
+}
+
+#game_scorecard .nextLevel
+{
+    background-image:url(../img/next-button.png);
+    width:180px;
+    height:92px;
+    top:-313px;
+    margin-left:277px;
+    background-position: 0px 0px;
+}
+
+#game_scorecard .nextLevel:hover
+{
+    background-position: -190px 0px;
+}
+
+#game_scorecard .mainMenu
+{
+    background-image:url(../img/menu-button.png);
+    width:180px;
+    height:92px;
+    margin-left:28px;
+    background-position: 0px 0px;
+}
+
+#game_scorecard .mainMenu:hover
+{
+    background-position: -190px 0px;
+}
+
+#game_scorecard .resetLevel
+{
+    background-image:url(../img/reset.png);
+    width:100px;
+    height:101px;
+    top:-160px;
+    margin-left:198px;
+}
+
+#game_scorecard .disabled
+{
+    opacity:0.5;
+}
+
+#game_scorecard .disabled:hover
+{
+    cursor: default;
+    background-position: 0px 0px;
+}

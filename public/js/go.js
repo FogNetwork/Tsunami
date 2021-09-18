@@ -17,11 +17,26 @@ open(url)
 } else if (url.startsWith('http://')) {
 open(url)
 } else {
-open('https://www.google.com/search?q=' + url)
+searchurl(url)
 }
 } else {
 return false;
 }
+}
+
+function searchurl(url) {
+  var search = localStorage.getItem("search")
+  if (search == "Google") {
+    open("https://www.google.com/search?q=" + url)
+  } else if (search == "DuckDuckGo") {
+    open("https://duckduckgo.com/?q=" + url)
+  } else if (search == "Bing") {
+    open("https://www.bing.com/search?q=" + url)
+  } else if (search == "Brave") {
+    open("https://search.brave.com/search?q=" + url)
+  } else {
+    console.log("Error with search")
+  }
 }
 
 function getproxy(url) {

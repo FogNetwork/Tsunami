@@ -284,7 +284,7 @@ line-height: 35px;
 }
 
 .settab, .settab2 {
-margin-top: 75px;
+margin-top: 15px;
 color: white;
 text-align: center;
 font-size: 35px;
@@ -410,4 +410,37 @@ cursor: pointer;
 .proxysel {
 color: black;
 background-color: white;
+}
+
+.setitle {
+margin-top: 75px;
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.sesel {
+display: flex;
+flex-direction: row;    
+justify-content: center; 
+align-items: center;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.se {
+margin-left: 5px;
+margin-right: 5px;
+cursor: pointer;
+border-radius: 30px;
+border: 1px solid rgb(255, 255, 255, .5);
+color: white;
+text-align: center;
+padding: 14px 18px;
+}
+
+.seactive {
+background: white;
+border: 1px solid white;
+color: black;
 }

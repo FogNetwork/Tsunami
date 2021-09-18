@@ -74,3 +74,7 @@ function goinfo() {
     isinfo = "no"
   }
 }
+
+if (localStorage.getItem("search") == null) {
+localStorage.setItem("search", "Google")
+}

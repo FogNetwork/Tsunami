@@ -8,7 +8,7 @@
 
 <h3>An official Fog Network proxy site, made to access the blocked web</h3>
 
-<p>Surf without web filters or restrictions. Made with style, Tsunami is dedicated to protecting your freedom from censorship.
+<p>Surf without web filters or restrictions. Made with style, Tsunami is a rather fancy service dedicated to protecting your freedom from censorship.
 Read the documentation below to find out more</p>
 
 <p>Want to improve Tsunami? <a href="https://github.com/FogNetwork/Tsunami/compare">Create a pull request</a></p>
@@ -30,7 +30,7 @@ Read the documentation below to find out more</p>
   - [Locally](#locally)
   - [Deploy](#deploy)
   - [Proxies](#proxies)
-  - [Config](#config)
+  - [Configuration](#configuration)
 - [Support](#support)
   - [FAQ](#faq)
   - [Contact](#contact)
@@ -80,15 +80,13 @@ Read the documentation below to find out more</p>
 
 ### Locally
 
-```
-cd tsunami
-```
+```sh
+git clone https://github.com/FogNetwork/Tsunami
 
-```
+cd Tsunami
+
 npm install
-```
 
-```
 npm start
 ```
 
@@ -110,7 +108,7 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 
 [Locally (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
 
-### Config
+### Configuration
 
 ```json
 {
@@ -187,7 +185,7 @@ Nebelung - Discord Coming Soon!
 
 [Binary Person](https://github.com/binary-person) - Creator of Womginx
 
-[Divide](https://github.com/vibedivide) - SystemYA Chatbox
+[Divide](https://github.com/vibedivide) - SystemYA and Chatbox Creator
 
 [Shirt](https://github.com/shirt-dev) - Proxy Developer
 
@@ -197,4 +195,4 @@ Nebelung - Discord Coming Soon!
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
 
-Thank You: Quite A Fancy Emerald, Inspiration for Tsunami
+Special Thanks Quite A Fancy Emerald Inspiration for Tsunami
