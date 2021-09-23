@@ -110,6 +110,8 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 
 ### Configuration
 
+**config.json**
+
 ```json
 {
     "port": "8080",
@@ -126,6 +128,32 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 `"username"` Username for authentication
 
 `"password"` Password for authentication
+
+**/public/js/go.js**
+
+```js
+var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/"
+
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+
+var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
+
+var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
+```
+
+If you want a proxy that is not on a subdomain just change the proxy you want to somthing like this
+
+```js
+var smokeproxy = "https://example.com/smoke/"
+```
+
+**/public/js/game.js**
+
+```js
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+```
+
+`corrosionproxy` The defualt
 
 ## Support
 

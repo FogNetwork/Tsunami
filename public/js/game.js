@@ -1,3 +1,5 @@
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+
 function searchgames() {
   var searchgames = document.getElementById("searchgames");
   var filter = searchgames.value.toLowerCase();
@@ -48,7 +50,7 @@ var arcade = document.getElementById("arcade");
 var closearcade = document.getElementById("closearcade");
 arcade.style.display = "initial";
 closearcade.style.display = "initial";
-arcade.setAttribute("src", game);
+arcade.setAttribute("src", corrosionproxy + game);
 }
     
 function closegame() {

@@ -1,3 +1,12 @@
+var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/"
+
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+
+var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
+
+var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
+
+
 window.onload = function() {
     
 search = document.getElementById("search");
@@ -42,13 +51,13 @@ function searchurl(url) {
 function getproxy(url) {
 var currentproxy = localStorage.getItem("proxy")
 if (currentproxy == "Smoke") {
-return "/smoke/" + url
+return smokeproxy + url
 } else if (currentproxy == "Corrosion") {
-return "/corrosion/gateway?url=" + url
+return corrosionproxy + url
 } else if (currentproxy == "Womginx") {
-return window.location.protocol + "//" + "w." + window.location.hostname + "/main/" + url
+return womginxproxy + url
 } else if (currentproxy == "PyDodge") {
-return window.location.protocol + "//" + "p." + window.location.hostname + "/course/" + url
+return pydodgeproxy + url
 }
 }
 
@@ -120,9 +129,3 @@ womginx.classList.remove("proxysel")
 pydodge.classList.add("proxysel")
 }
 }
-
-document.addEventListener('keydown', function(e) {
-    if(e.keyCode == 27){
-        closesurf()
-    }
-});
