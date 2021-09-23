@@ -444,3 +444,11 @@ background: white;
 border: 1px solid white;
 color: black;
 }
+
+#nogame {
+font-size: 20px;
+text-align: center;
+margin-top: 7px;
+color: white;
+display: none;
+}
