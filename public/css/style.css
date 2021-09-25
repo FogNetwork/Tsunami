@@ -213,6 +213,20 @@ z-index: 11;
 cursor: pointer;
 }
 
+#fullarcade {
+display: none;
+position: fixed;
+top: 70px; 
+right: 60px; 
+background-color: #2493ff;
+border-radius: 2.5px;
+height: 40px;
+width: 40px;
+text-align: center;
+z-index: 11;
+cursor: pointer;
+}
+
 #closeicon {
 color: black;
 font-size: 30px;
@@ -226,6 +240,12 @@ line-height: 40px;
 }
 
 #closearcadeicon {
+color: black;
+font-size: 30px;
+line-height: 40px;
+}
+
+#fullarcadeicon {
 color: black;
 font-size: 30px;
 line-height: 40px;

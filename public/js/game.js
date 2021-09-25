@@ -48,21 +48,24 @@ document.getElementById("nogame").style.display = "none"
 function opengame(game) {
 var arcade = document.getElementById("arcade");
 var closearcade = document.getElementById("closearcade");
+var fullarcade = document.getElementById("fullarcade");
 arcade.style.display = "initial";
 closearcade.style.display = "initial";
+fullarcade.style.display = "initial";
 arcade.setAttribute("src", game);
 }
     
 function closegame() {
 var arcade = document.getElementById("arcade");
 var closearcade = document.getElementById("closearcade");
+var fullarcade = document.getElementById("fullarcade");
 arcade.style.display = "none";
 closearcade.style.display = "none";
+fullarcade.style.display = "none";
 arcade.setAttribute("src", "");
 }
 
-document.addEventListener('keydown', function(e) {
-    if(e.keyCode == 27){
-        closegame()
-    }
-});
+function fullgame() {
+  var arcade = document.getElementById("arcade")
+  arcade.requestFullscreen()
+}
