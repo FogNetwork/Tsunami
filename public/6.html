@@ -28,7 +28,198 @@
 </div>
 
 <div class="title">Documentation</div>
-<div class="body">The Docs From Github</div>
+<div class="body">
+- Overview
+<br>
+  - Supported Sites
+<br>
+  - Features
+<br>
+  - Pages
+<br>
+- Setup
+<br>
+  - Locally
+<br>
+  - Deploy
+<br>
+  - Proxies
+<br>
+  - Configuration
+<br>
+- More
+<br>
+  - Proxy Sources
+<br>
+
+<h2>Overview</h2>
+<h3>Supported Sites</h3>
+- google.com
+<br>
+- discord.com
+<br>
+- youtube.com
+<br>
+- invidio.us
+<br>
+- reddit.com
+<br>
+- wolframalpha.com
+<br>
+- 1v1.lol
+<br>
+- schoolcheats.net?
+<br>
+
+<h3>Features</h3>
+- All the best proxies
+<br>
+- Nice game library
+<br>
+- Chatbox connected to discord
+<br>
+- Tab cloaking and other cool features
+<br>
+- Basic auth
+<br>
+- Looks good
+<br>
+
+<h2>Pages</h2>
+- <b>/</b> Homepage
+<br>
+- <b>/1</b> Arcade
+<br>
+- <b>/2</b> Chatbox
+<br>
+- <b>/3</b> Settings
+<br>
+- <b>/4</b> Terms
+<br>
+- <b>/5</b> Privacy
+<br>
+- <b>/6</b> Documentation
+<br>
+- <b>/7</b> Credits
+<br>
+- <b>/8</b> Support and Contact
+<br>
+- <b>/404</b> 404 Error
+<br>
+
+<h2>Setup</h2>
+<b>Please Note: Womginx and PyDodge will not work without deploying are hosted on subdomains, see proxies for more info</b>
+<br>
+
+<h3>Locally</h3>
+
+git clone https://github.com/FogNetwork/Tsunami
+<br>
+cd Tsunami
+<br>
+npm install
+<br>
+npm start
+<br>
+
+<h3>Deploy</h3>
+Click one of the buttons above and follow the steps
+<br>
+
+<h3>Proxies</h3>
+Some of the proxies on Tsunami are hosted on subdomains, deploy the correct proxy for Tsunami to work
+<br>
+Smoke and Corrosion are hosted locally, so you don't need a subdomain
+<br>
+<br>
+w.example.com (Womginx)
+<br>
+p.example.com (PyDodge)
+<br>
+Locally (Smoke)
+<br>
+Locally (Corrosion)
+<br>
+
+<h3>Configuration</h3>
+<b>config.json</b>
+<br>
+<br>
+    "port": "8080",
+<br>
+    "auth": "false",
+<br>
+    "username": "user",
+<br>
+    "password": "secret"
+<br>
+<br>
+<b>"port": "8080"</b> Changes the port
+<br>
+<b>"auth": "false"</b> Basic authentication, set to true of false
+<br>
+<b>"username"</b> Username for authentication
+<br>
+<b>"password"</b> Password for authentication
+<br>
+
+<b>/public/js/go.js</b>
+<br>
+<br>
+var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/"
+<br>
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+<br>
+var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
+<br>
+var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
+<br>
+<br>
+<b>smokeproxy</b> Location for Smoke proxy
+<br>
+<b>corrosionproxy</b> Location for Corrosion proxy
+<br>
+<b>womginx</b> Location for Womginx proxy
+<br>
+<b>pydodgeproxy</b> Location for PyDodge proxy
+<br>
+Custom Proxy Example:
+<br>
+var smokeproxy = "https://example.com/smoke/"
+<br>
+<br>
+<b>/public/js/game.js</b>
+<br>
+<br>
+var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
+<br>
+<br>
+<b>corrosionproxy</b> Location for game proxy
+<br>
+
+<h2>More</h2>
+<h3>Proxy Sources</h3>
+Smoke
+<br>
+Corrosion
+<br>
+Womginx
+<br>
+PyDodge
+<br>
+Alloy (Not Used)
+<br>
+SystemYA (Not Used)
+<br>
+Via (Not Used)
+<br>
+Node Unblocker (Not Used)
+<br>
+Powermouse (Not Used)
+<br>
+<br>
+Special Thanks Quite A Fancy Emerald, Inspiration for Tsunami
+</div>
 
 </body>
 </html>

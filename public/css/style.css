@@ -4,6 +4,7 @@
 body {
 background-color: #121212;
 --light: #f2f2f2;
+--blue: #2493ff;
 }
 
 * {

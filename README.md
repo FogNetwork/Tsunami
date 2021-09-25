@@ -76,7 +76,7 @@ Read the documentation below to find out more</p>
 
 ## Setup
 
-**Please Note: Womginx and PyDodgee will not work without deploying are hosted on subdomains, see [proxies](#proxies) for more info**
+**Please Note: Womginx and PyDodge will not work without deploying are hosted on subdomains, see [proxies](#proxies) for more info**
 
 ### Locally
 
