@@ -59,7 +59,7 @@ Read the documentation below to find out more</p>
 - Chatbox connected to discord
 - Tab cloaking and other cool features
 - Basic auth
-- Also looks good
+- Looks good
 
 ## Pages
 
@@ -140,8 +140,15 @@ var womginxproxy = window.location.protocol + "//" + "w." + window.location.host
 
 var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
 ```
+`smokeproxy` Location for Smoke proxy
 
-If you want a proxy that is not on a subdomain just change the proxy you want to somthing like this
+`corrosionproxy` Location for Corrosion proxy
+
+`womginx` Location for Womginx proxy
+
+`pydodgeproxy` Location for PyDodge proxy
+
+Custom Proxy Example:
 
 ```js
 var smokeproxy = "https://example.com/smoke/"
@@ -153,7 +160,7 @@ var smokeproxy = "https://example.com/smoke/"
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 ```
 
-`corrosionproxy` The defualt
+`corrosionproxy` Location for game proxy
 
 ## Support
 
@@ -223,4 +230,4 @@ Nebelung - Discord Coming Soon!
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
 
-Special Thanks Quite A Fancy Emerald Inspiration for Tsunami
+Special Thanks Quite A Fancy Emerald, Inspiration for Tsunami
