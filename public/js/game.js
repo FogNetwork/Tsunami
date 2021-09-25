@@ -50,7 +50,7 @@ var arcade = document.getElementById("arcade");
 var closearcade = document.getElementById("closearcade");
 arcade.style.display = "initial";
 closearcade.style.display = "initial";
-arcade.setAttribute("src", corrosionproxy + game);
+arcade.setAttribute("src", game);
 }
     
 function closegame() {
