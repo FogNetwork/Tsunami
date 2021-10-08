@@ -21,6 +21,7 @@
     "author": "Fog Network",
     "license": "MIT",
     "dependencies": {
+        "acorn-hammerhead": "^0.5.0",
         "alloyproxy": "^1.1.0",
         "bindlestiff": "^0.1.0",
         "box2d-events": "0.0.1",
@@ -32,6 +33,7 @@
         "continuous-observer": "^0.2.0",
         "cooljs": "^1.0.4",
         "corrosion": "^1.0.0",
+        "css-tree": "^1.1.3",
         "dup": "^1.0.0",
         "ecstatic": "^4.1.4",
         "express": "^4.17.1",
@@ -44,6 +46,7 @@
         "ndarray-fill": "^1.0.2",
         "object-pool": "^0.2.0",
         "opn": "^6.0.0",
+        "parse5": "^6.0.1",
         "perlin": "^1.0.0",
         "pointer-trap": "0.0.0",
         "raf": "^3.4.1",
@@ -52,6 +55,7 @@
         "unblocker": "^2.3.0",
         "vectors": "^0.1.0",
         "watchify": "^4.0.0",
+        "webpack": "^5.58.0",
         "zeros": "^1.0.0"
     }
 }

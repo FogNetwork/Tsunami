@@ -9,7 +9,7 @@ const app = express()
 const basicAuth = require('express-basic-auth');
 const config = require('./config.json')
 const port = process.env.PORT || config.port
-const Corrosion = require('corrosion')
+const Corrosion = require('./lib/server')
 const auth = config.auth
 const username = config.username
 const password = config.password
@@ -20,6 +20,7 @@ const proxy = new Corrosion({
     prefix: "/corrosion/",
     codec: "xor",
     title: "Tsunami",
+    forceHttps: true
 });
 
 if (auth == "true") { 
