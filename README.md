@@ -190,6 +190,8 @@ Nebelung - Discord Coming Soon!
 
 [Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)
 
+[Modified Corrosion](https://github.com/BinBashBanana/Corrosion-Heroku)
+
 [Womginx](https://github.com/binary-person/womginx)
 
 [PyDodge](https://github.com/BinBashBanana/PyDodge)
