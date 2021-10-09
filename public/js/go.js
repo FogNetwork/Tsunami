@@ -1,4 +1,4 @@
-var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/"
+var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/gateway?url="
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 

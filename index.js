@@ -10,6 +10,8 @@ const basicAuth = require('express-basic-auth');
 const config = require('./config.json')
 const port = process.env.PORT || config.port
 const Corrosion = require('./lib/server')
+const prefix = "/smoke/"
+const btoa = e => new Buffer.from(e).toString("base64")
 const auth = config.auth
 const username = config.username
 const password = config.password
@@ -22,6 +24,10 @@ const proxy = new Corrosion({
     title: "Tsunami",
     forceHttps: true
 });
+
+const Smoke = new (require("./smoke/smoke"))(prefix, {
+    docTitle: "Tsunami"
+})
 
 if (auth == "true") { 
 app.use(basicAuth({
@@ -48,10 +54,16 @@ app.get('/', function(req, res){
 app.use(function (req, res) {
     if (req.url.startsWith(proxy.prefix)) {
       proxy.request(req,res);
+    } else if (req.url.startsWith(prefix + "gateway")) {
+      res.redirect(prefix + btoa(req.query.url))
+    } else if (req.url.startsWith(prefix)) {
+      return Smoke.request(req, res)
     } else {
       res.status(404).sendFile('404.html', {root: './public'});
     }
-});
+}).post('*', (req, res) => {
+  if (req.url.startsWith(prefix)) return Smoke.post(req, res)
+})
 
 app.listen(port, () => {
   console.log(`Tsunami is running at localhost:${port}`)
