@@ -2,6 +2,6 @@
     "name": "Tsunami",
     "description": "An official Fog Network proxy site, made to access the blocked web",
     "repository": "https://github.com/FogNetwork/Tsunami",
-    "logo": "https://avatars.githubusercontent.com/u/87547936?s=200&v=4",
+    "logo":"https://raw.githubusercontent.com/FogNetwork/Tsunami/main/public/img/logo.png",
     "keywords": ["javascript", "proxy", "bypass", "proxy-site", "unblocker", "fog-network"]
 }
