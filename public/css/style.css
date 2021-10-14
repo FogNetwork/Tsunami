@@ -74,7 +74,7 @@ font-size: 12px;
 }
 
 .link {
-color: #3377ff;
+color: #3377ff !important;
 }
 
 .homename {
@@ -473,4 +473,45 @@ text-align: center;
 margin-top: 7px;
 color: white;
 display: none;
+}
+
+.homepage {
+  overflow: hidden;
+}
+
+.setapp {
+  margin-top: 15px;
+}
+
+.apptitle {
+margin-top: 15px;
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.chooseappsel {
+display: flex;
+flex-direction: row;    
+justify-content: center; 
+align-items: center;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.chooseapp {
+margin-left: 5px;
+margin-right: 5px;
+cursor: pointer;
+border-radius: 30px;
+border: 1px solid rgb(255, 255, 255, .5);
+color: white;
+text-align: center;
+padding: 14px 18px;
+}
+
+.chooseappactive {
+background: white;
+border: 1px solid white;
+color: black;
 }

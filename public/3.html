@@ -10,12 +10,13 @@
     <title>Settings</title>
     <link rel="shortcut icon" type="image/png" href="/img/logo.svg">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/settings.js"></script>
 </head>
-<body>
+<body appearance="dark">
 
 <div class="navbar">
 
@@ -53,6 +54,13 @@
 <div class="se" id="brave" onclick="setsearch('Brave')">Brave</div>
 </div>
 
+<div class="setapp">
+<div class="apptitle">Appearance</div>
+<div class="chooseappsel">
+<div class="chooseapp" id="appdark" onclick="setapp('dark')">Dark</div>
+<div class="chooseapp" id="applight" onclick="setapp('light')">Light</div>
+</div>
+</div>
 
 </body>
 </html>

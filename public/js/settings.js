@@ -39,3 +39,39 @@ function setsearch(engine) {
     brave.classList.add("seactive")
   }
 }
+
+window.addEventListener('load', function() {
+
+var appearance = localStorage.getItem("appearance")
+var appdark = document.getElementById("appdark")
+var applight = document.getElementById("applight")
+
+if (localStorage.getItem("appearance") !== null) {
+    document.getElementsByTagName("body")[0].setAttribute("appearance", appearance)
+    if (appearance == "dark") {
+      appdark.classList.add("chooseappactive")
+      applight.classList.remove("chooseappactive")
+    } else {
+      applight.classList.add("chooseappactive")
+      appdark.classList.remove("chooseappactive")
+    }
+} else {
+    localStorage.setItem("appearance", "dark")
+    document.getElementsByTagName("body")[0].setAttribute("appearance", "dark")
+}
+
+})
+
+function setapp(theme) {
+    if (theme == "dark") {
+      localStorage.setItem("appearance", "dark")
+      appdark.classList.add("chooseappactive")
+      applight.classList.remove("chooseappactive")
+      document.getElementsByTagName("body")[0].setAttribute("appearance", "dark")
+    } else {
+      localStorage.setItem("appearance", "light")
+      applight.classList.add("chooseappactive")
+      appdark.classList.remove("chooseappactive")
+      document.getElementsByTagName("body")[0].setAttribute("appearance", "light")
+    }
+}

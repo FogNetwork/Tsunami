@@ -78,3 +78,16 @@ function goinfo() {
 if (localStorage.getItem("search") == null) {
 localStorage.setItem("search", "Google")
 }
+
+window.addEventListener('load', function() {
+
+var appearance = localStorage.getItem("appearance")
+
+if (localStorage.hasOwnProperty("appearance")) {
+    document.getElementsByTagName("body")[0].setAttribute("appearance", appearance)
+} else {
+    localStorage.setItem("appearance", "dark")
+    document.getElementsByTagName("body")[0].setAttribute("appearance", "dark")
+}
+
+})

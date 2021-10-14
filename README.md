@@ -124,9 +124,9 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 
 `"port": "8080"` Changes the port 
 
-`"lite": "false"` Hides Womginx and PyDodge, set to true of false 
+`"lite": "false"` Hides Womginx and PyDodge, set to true or false 
 
-`"auth": "false"` Basic authentication, set to true of false
+`"auth": "false"` Basic authentication, set to true or false
 
 `"username"` Username for authentication
 
@@ -179,7 +179,7 @@ Captcha is only supported on womginx, though the support is limited
 
 **Why is Discord not working properly?**
 
-Try using womginx or Corrosion. Refreshing the page might help
+Try using Womginx or Corrosion. Refreshing the page might help
 
 ### Contact
 
