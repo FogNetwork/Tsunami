@@ -115,6 +115,7 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 ```json
 {
     "port": "8080",
+    "lite": "false",
     "auth": "false",
     "username": "user",
     "password": "secret"
@@ -122,6 +123,8 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 ```
 
 `"port": "8080"` Changes the port 
+
+`"lite": "false"` Hides Womginx and PyDodge, set to true of false 
 
 `"auth": "false"` Basic authentication, set to true of false
 

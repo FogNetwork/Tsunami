@@ -13,6 +13,7 @@ const Corrosion = require('./lib/server')
 const SmokeProxy = require("./smoke/smoke")
 const prefix = "/smoke/"
 const btoa = e => new Buffer.from(e).toString("base64")
+const lite = config.lite
 const auth = config.auth
 const username = config.username
 const password = config.password
@@ -44,13 +45,25 @@ function autherror(req) {
         : 'Error'
 }
 
+if (lite == "true") {
+
+app.get('/', function(req, res){
+    res.sendFile('index.html', {root: './lite'});
+});
+
+app.get('/js/go.js', function(req, res){
+    res.sendFile('go.js', {root: './lite'});
+});
+
+}
+
 app.use(express.static('./public', {
-    extensions: ['html', 'htm']
+    extensions: ['html']
 }));
 
 app.get('/', function(req, res){
     res.sendFile('index.html', {root: './public'});
-}); 
+});
 
 app.use(function (req, res) {
     if (req.url.startsWith(proxy.prefix)) {

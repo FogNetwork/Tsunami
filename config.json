@@ -1,5 +1,6 @@
 {
     "port": "8080",
+    "lite": "false",
     "auth": "false",
     "username": "user",
     "password": "secret"

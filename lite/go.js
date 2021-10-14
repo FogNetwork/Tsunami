@@ -110,22 +110,30 @@ localStorage.setItem("proxy", proxy)
 if (proxy == "Smoke") {
 smoke.classList.add("proxysel")
 corrosion.classList.remove("proxysel")
+/*
 womginx.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
+*/
 } else if (proxy == "Corrosion") {
 smoke.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
+/*
 womginx.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
+*/
 } else if (proxy == "Womginx") {
 smoke.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
+/*
 womginx.classList.add("proxysel")
 pydodge.classList.remove("proxysel")
+*/
 } else if (proxy == "PyDodge") {
 smoke.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
+/*
 womginx.classList.remove("proxysel")
 pydodge.classList.add("proxysel")
+*/
 }
 }
