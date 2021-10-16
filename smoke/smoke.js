@@ -3,7 +3,7 @@ const http = require('http'),fs = require('fs'),WebSocket = require('ws'),querys
 btoa = str => new Buffer.from(str).toString('base64'),
 atob = str => new Buffer.from(str, 'base64').toString('utf-8')
 
-//var { prefix, port } = require('../../config.json')
+//var { prefix, port } = require('../config.json')
 
 const port = 8080
 const prefix = "/smoke/"
@@ -20,7 +20,7 @@ module.exports = class {
   request(req, res) {
     if (req.url.replace(prefix, '')==='smoke') {
       res.writeHead(200, {'content-type': 'application/javascript'})
-      res.end(fs.readFileSync('./smoke/client.js'))
+      return res.end(fs.readFileSync('./smoke/client.js'))
     }
     var proxy = {host: (this.proxyURL(req).replace(/(https:\/\/|http:\/\/|\/$)/g, '')).split('/')[0],path: (this.proxyURL(req)).split('/')[(this.proxyURL(req)).split('/').length - 1],url: this.proxyURL(req),docTitle: this.config.docTitle}
 
@@ -35,7 +35,7 @@ module.exports = class {
 
     //if (req.headers['cookie']) proxy.options['cookie'] = req.headers['cookie']
 
-    try {new URL(proxy.url)} catch(e) {res.end('Invalid URL: '+proxy.url);return}
+    try {new URL(proxy.url)} catch(err) {return res.end('Invalid URL: '+proxy.url+', '+err)}
 
     proxy.spliceURL = new URL(proxy.url)
 
@@ -192,9 +192,9 @@ module.exports = class {
         res.writeHead(response.statusCode, response.headers).end(sendData)
       })
     }).on('error', err => res.end(fs.readFileSync('./smoke/err.html', 'utf-8').replace('err_reason', err))).end()
-    if (!res.writableEnded) {
+    /*if (!res.writableEnded) {
       req.on('data', (data) => requestMain.write(data)).on('end', () => requestMain.end())
-    }
+    }*/
   }
   post(req, res) {
     var url = atob(req.url.replace(prefix, ''))
