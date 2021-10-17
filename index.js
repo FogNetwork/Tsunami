@@ -24,8 +24,15 @@ const proxy = new Corrosion({
     prefix: "/corrosion/",
     codec: "xor",
     title: "Tsunami",
-    forceHttps: true
+    forceHttps: true,
+    requestMiddleware: [
+        Corrosion.middleware.blacklist([
+            'accounts.google.com',
+        ], 'Page is blocked'),
+    ]
 });
+
+proxy.bundleScripts();
 
 const smoke = new SmokeProxy(prefix, {
     docTitle: "Tsunami"
