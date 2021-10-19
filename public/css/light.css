@@ -139,3 +139,7 @@ body[appearance="light"] #info {
   color: black;
   border: 1px solid black;
 }
+
+body[appearance="light"] #docspage {
+color: black;
+}

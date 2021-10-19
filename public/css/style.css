@@ -515,3 +515,9 @@ background: white;
 border: 1px solid white;
 color: black;
 }
+
+#docspage {
+margin-top: 75px;
+color: white;
+line-height: 35px;
+}
