@@ -1,7 +1,6 @@
 {
-    "name": "Tsunami",
-    "description": "An official Fog Network proxy site, made to access the blocked web",
-    "repository": "https://github.com/FogNetwork/Tsunami",
-    "logo":"https://raw.githubusercontent.com/FogNetwork/Tsunami/main/public/img/logo.png",
-    "keywords": ["javascript", "proxy", "bypass", "proxy-site", "unblocker", "fog-network"]
+    "name": "Milknami",
+    "description": "fork of Tsunami for Project Cookie",
+    "repository": "https://github.com/c0d3rb0y/Milknami",
+    "logo":"https://raw.githubusercontent.com/c0d3rb0y/Milknami/main/public/img/cookie.png"
 }
