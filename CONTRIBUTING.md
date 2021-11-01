@@ -20,11 +20,3 @@ The request has no errors or bugs
 Is is something that is needed
 
 And does not change anything like the logo or title
-
-### Game Requests
-
-**When making a game request please fill out this [form](https://github.com/FogNetwork/Tsunami/issues/new?assignees=&labels=game+request&template=game-request.yml)**
-
-Game requests must have a link to the game source (emulator, game, web, flash, or retro)
-
-Big games like minecraft cannot be added

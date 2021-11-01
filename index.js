@@ -23,7 +23,7 @@ users[username] = password
 const proxy = new Corrosion({
     prefix: "/corrosion/",
     codec: "xor",
-    title: "Tsunami",
+    title: "Milknami",
     forceHttps: true,
     requestMiddleware: [
         Corrosion.middleware.blacklist([
