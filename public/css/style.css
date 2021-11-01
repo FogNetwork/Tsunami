@@ -557,3 +557,7 @@ height: 28px;
 background-color: rgb(16,16,16,0);
 margin-right: 8px;
 }
+
+.navitem:hover {
+text-decoration: underline;
+}
