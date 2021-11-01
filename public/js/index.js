@@ -90,4 +90,12 @@ if (localStorage.hasOwnProperty("appearance")) {
     document.getElementsByTagName("body")[0].setAttribute("appearance", "dark")
 }
 
+var css = localStorage.getItem("css")
+
+if (css !== null) {
+  var csselm = document.createElement("style")
+  csselm.innerText = css
+  document.body.appendChild(csselm)
+}
+
 })

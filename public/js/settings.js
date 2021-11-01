@@ -75,3 +75,23 @@ function setapp(theme) {
       document.getElementsByTagName("body")[0].setAttribute("appearance", "light")
     }
 }
+
+function setcss(input) {
+if (input !== "") {
+  localStorage.setItem("css", input)
+  location.reload();
+} else {
+  localStorage.removeItem("css")
+  location.reload();
+}
+}
+
+window.addEventListener('load', function() {
+
+var css = localStorage.getItem("css")
+
+if (css !== null) {
+  document.getElementById("setcssinput").value = css
+}
+
+})

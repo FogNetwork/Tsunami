@@ -18,6 +18,10 @@ body[appearance="light"] .apptitle {
   color: black;
 }
 
+body[appearance="light"] .csstitle {
+  color: black;
+}
+
 body[appearance="light"] .setitle {
   color: black;
 }
@@ -31,12 +35,22 @@ body[appearance="light"] .settab8 {
   border: 1.5px solid black;
 }
 
+body[appearance="light"] .setcssinput {
+  color: black;
+  border: 1.5px solid black;
+}
+
 body[appearance="light"] .settit {
   color: black;
   border: 1.5px solid black;
 }
 
 body[appearance="light"] .setfav {
+  color: black;
+  border: 1.5px solid black;
+}
+
+body[appearance="light"] .setcssbtn {
   color: black;
   border: 1.5px solid black;
 }

@@ -59,6 +59,7 @@ Read the documentation below to find out more</p>
 - Chatbox connected to discord
 - Tab cloaking and other cool features
 - Basic auth
+- Customizable CSS
 - Looks good
 
 ## Pages

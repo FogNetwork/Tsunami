@@ -330,7 +330,7 @@ height: 28px;
 background-color: rgb(16,16,16,0);
 }
 
-.settit, .setfav {
+.settit, .setfav, .setcssbtn {
 width: 62px;
 color: white;
 border-radius: 5px;
@@ -340,6 +340,7 @@ font-size: 15px;
 height: 38px;
 background-color: rgb(16,16,16,0);
 cursor: pointer;
+margin-top: 14px;
 }
 
 .settabs {
@@ -476,11 +477,11 @@ display: none;
 }
 
 .homepage {
-  overflow: hidden;
+overflow: hidden;
 }
 
 .setapp {
-  margin-top: 15px;
+margin-top: 15px;
 }
 
 .apptitle {
@@ -520,4 +521,39 @@ color: black;
 margin-top: 75px;
 color: white;
 line-height: 35px;
+}
+
+.setcss {
+margin-top: 15px;
+}
+
+.csstitle {
+margin-top: 15px;
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.setcssmain {
+display: flex;
+flex-direction: row;    
+justify-content: center; 
+align-items: center;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.setcssinput {
+width: 30%;
+margin-top: 14px;
+outline: none;
+color: white;
+border-radius: 5px;
+padding: 3px;
+padding-left: 8px;
+border: 1.5px solid white;
+font-size: 15px;
+height: 28px;
+background-color: rgb(16,16,16,0);
+margin-right: 8px;
 }
