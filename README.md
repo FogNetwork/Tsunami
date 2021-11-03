@@ -172,11 +172,11 @@ var corrosionproxy = window.location.protocol + "//" + window.location.hostname 
 
 **How can I get new domains?**
 
-Join our [discord}(https://discord.gg/yk33HZSZkU) for more Tsunami links
+Join our [discord](https://discord.gg/yk33HZSZkU) for more Tsunami links
 
 **Captcha not working/issues**
 
-Captcha is only supported on womginx, though the support is limited
+Captcha is only supported on Womginx, though the support is limited
 
 **Why is Discord not working properly?**
 
