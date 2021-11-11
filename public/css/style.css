@@ -561,3 +561,7 @@ margin-right: 8px;
 .navitem:hover {
 text-decoration: underline;
 }
+
+.underline:hover {
+  text-decoration: underline;
+}
