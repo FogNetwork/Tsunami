@@ -11,7 +11,7 @@ const config = require('./config.json')
 const port = process.env.PORT || config.port
 const Corrosion = require('./lib/server')
 const SmokeProxy = require("./smoke/smoke")
-const prefix = "/smoke/"
+const prefix = "/palladium/"
 const btoa = e => new Buffer.from(e).toString("base64")
 const lite = config.lite
 const auth = config.auth

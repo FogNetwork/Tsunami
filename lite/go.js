@@ -1,4 +1,4 @@
-var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/gateway?url="
+var palladiumproxy = window.location.protocol + "//" + window.location.hostname + "/palladium/gateway?url="
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
@@ -50,8 +50,8 @@ function searchurl(url) {
 
 function getproxy(url) {
 var currentproxy = localStorage.getItem("proxy")
-if (currentproxy == "Smoke") {
-return smokeproxy + url
+if (currentproxy == "Palladium") {
+return palladiumproxy + url
 } else if (currentproxy == "Corrosion") {
 return corrosionproxy + url
 } else if (currentproxy == "Womginx") {
@@ -93,7 +93,7 @@ surf.src += '';
 
 window.addEventListener('load', function() {
 var currentproxy = localStorage.getItem("proxy")
-var smoke = document.getElementById("smoke")
+var palladium = document.getElementById("palladium")
 var corrosion = document.getElementById("corrosion")
 var womginx = document.getElementById("womginx")
 var pydodge = document.getElementById("pydodge")
@@ -107,29 +107,29 @@ document.getElementById(currentproxy2).classList.add("proxysel")
 
 function setproxy(proxy) {
 localStorage.setItem("proxy", proxy)
-if (proxy == "Smoke") {
-smoke.classList.add("proxysel")
+if (proxy == "Palladium") {
+palladium.classList.add("proxysel")
 corrosion.classList.remove("proxysel")
 /*
 womginx.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
 */
 } else if (proxy == "Corrosion") {
-smoke.classList.remove("proxysel")
+palladium.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
 /*
 womginx.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
 */
 } else if (proxy == "Womginx") {
-smoke.classList.remove("proxysel")
+palladium.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
 /*
 womginx.classList.add("proxysel")
 pydodge.classList.remove("proxysel")
 */
 } else if (proxy == "PyDodge") {
-smoke.classList.remove("proxysel")
+palladium.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
 /*
 womginx.classList.remove("proxysel")

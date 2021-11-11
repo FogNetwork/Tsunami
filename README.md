@@ -100,13 +100,13 @@ Click one of the buttons above and follow the steps
 
 Some of the proxies on Tsunami are hosted on subdomains, deploy the correct proxy for Tsunami to work
 
-Smoke and Corrosion are hosted locally, so you don't need a subdomain
+Palladium and Corrosion are hosted locally, so you don't need a subdomain
 
 [w.example.com (Womginx)](https://github.com/binary-person/womginx)
 
 [p.example.com (PyDodge)](https://github.com/BinBashBanana/PyDodge)
 
-[Locally (Smoke)](https://github.com/FogNetwork/Smoke)
+[Locally (Palladium)](https://github.com/FogNetwork/Palladium)
 
 [Locally (Corrosion)](https://github.com/titaniumnetwork-dev/Corrosion)
 
@@ -137,7 +137,7 @@ Smoke and Corrosion are hosted locally, so you don't need a subdomain
 **/public/js/go.js**
 
 ```js
-var smokeproxy = window.location.protocol + "//" + window.location.hostname + "/smoke/gateway?url="
+var palladiumproxy = window.location.protocol + "//" + window.location.hostname + "/palladium/gateway?url="
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
@@ -145,7 +145,7 @@ var womginxproxy = window.location.protocol + "//" + "w." + window.location.host
 
 var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
 ```
-`smokeproxy` Location for Smoke proxy
+`palladiumproxy` Location for Palladium proxy
 
 `corrosionproxy` Location for Corrosion proxy
 
@@ -156,7 +156,7 @@ var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.host
 Custom Proxy Example:
 
 ```js
-var smokeproxy = "https://example.com/smoke/"
+var palladiumproxy = "https://example.com/palladium/"
 ```
 
 **/public/js/game.js**
@@ -191,7 +191,7 @@ Nebelung - [Nebelung#1335](https://discord.com/users/887118260963782686)
 
 ### Proxy Sources
 
-[Smoke](https://github.com/FogNetwork/Smoke)
+[Palladium](https://github.com/FogNetwork/Palladium)
 
 [Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)
 

@@ -6,7 +6,7 @@ atob = str => new Buffer.from(str, 'base64').toString('utf-8')
 //var { prefix, port } = require('../config.json')
 
 const port = 8080
-const prefix = "/smoke/"
+const prefix = "/palladium/"
 
 if(!prefix.includes("/", 2)) {prefix = prefix.replace("/", "");prefix = "/"+prefix+"/"}
 
