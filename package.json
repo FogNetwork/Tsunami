@@ -47,6 +47,7 @@
         "ndarray-fill": "^1.0.2",
         "object-pool": "^0.2.0",
         "opn": "^6.0.0",
+        "palladiumub": "^1.2.0",
         "parse5": "^6.0.1",
         "perlin": "^1.0.0",
         "pointer-trap": "0.0.0",

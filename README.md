@@ -60,6 +60,7 @@ Read the documentation below to find out more</p>
 - Tab cloaking and other cool features
 - Basic auth
 - Customizable CSS
+- Installable PWA
 - Looks good
 
 ## Pages
