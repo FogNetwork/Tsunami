@@ -157,3 +157,7 @@ body[appearance="light"] #info {
 body[appearance="light"] #docspage {
 color: black;
 }
+
+.link {
+color: black !important;
+}
