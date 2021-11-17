@@ -159,14 +159,6 @@ Custom Proxy Example:
 var palladiumproxy = "https://example.com/palladium/"
 ```
 
-**/public/js/game.js**
-
-```js
-var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
-```
-
-`corrosionproxy` Location for game proxy
-
 ## Support
 
 ### FAQ
