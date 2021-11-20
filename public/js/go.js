@@ -88,7 +88,7 @@ surf.setAttribute("src", "");
 
 function reloadsurf() {
 var surf = document.getElementById("surf");
-surf.src += '';
+surf.contentWindow.location.reload()
 }
 
 window.addEventListener('load', function() {
