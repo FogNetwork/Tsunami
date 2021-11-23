@@ -130,6 +130,11 @@
         "location": "/games/files/flash?swf=achievementunlocked.swf"
     },
     {
+        "title": "Cubefield",
+        "image": "/games/images/cubefield.jpeg",
+        "location": "/games/files/flash?swf=cubefield.swf"
+    },
+    {
         "title": "Retro - Coming Soon!",
         "image": "https://avatars.githubusercontent.com/u/87547936",
         "location": "/"
