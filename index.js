@@ -83,8 +83,6 @@ app.use(function (req, res) {
     } else {
       res.status(404).sendFile('404.html', {root: './public'});
     }
-}).post('*', (req, res) => {
-  if (req.url.startsWith(prefix)) return smoke.post(req, res)
 })
 
 app.listen(port, () => {
