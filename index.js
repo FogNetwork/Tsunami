@@ -4,15 +4,13 @@ Made by Nebelung
 MIT license: https://opensource.org/licenses/MIT
 */
 
-const express = require('express')
+const express = require("express")
 const app = express()
-const basicAuth = require('express-basic-auth');
-const config = require('./config.json')
+const basicAuth = require("express-basic-auth");
+const config = require("./config.json")
 const port = process.env.PORT || config.port
-const Corrosion = require('./lib/server')
-const SmokeProxy = require("./smoke/smoke")
-const prefix = "/palladium/"
-const btoa = e => new Buffer.from(e).toString("base64")
+const Corrosion = require("./lib/server")
+const PalladiumProxy = require("./palladium/server")
 const lite = config.lite
 const auth = config.auth
 const username = config.username
@@ -34,9 +32,14 @@ const proxy = new Corrosion({
 
 proxy.bundleScripts();
 
-const smoke = new SmokeProxy(prefix, {
-    docTitle: "Tsunami"
+const palladium = new (PalladiumProxy)({
+  encode: "xor",
+  ssl: "false",
+  prefix: "/palladium/",
+  title: "Tsunami"
 })
+
+palladium.clientScript();
 
 if (auth == "true") { 
 app.use(basicAuth({
@@ -75,10 +78,8 @@ app.get('/', function(req, res){
 app.use(function (req, res) {
     if (req.url.startsWith(proxy.prefix)) {
       proxy.request(req,res);
-    } else if (req.url.startsWith(prefix + "gateway")) {
-      res.redirect(prefix + btoa(req.query.url))
-    } else if (req.url.startsWith(prefix)) {
-      return smoke.request(req, res)
+    } else if (req.url.startsWith(palladium.prefix)) {
+      return palladium.request(req, res)
     } else {
       res.status(404).sendFile('404.html', {root: './public'});
     }

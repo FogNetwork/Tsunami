@@ -43,6 +43,7 @@
         "inherits": "^2.0.4",
         "jsdom": "^18.0.0",
         "kb-controls": "^0.2.0",
+        "mime": "^3.0.0",
         "ndarray-continuous": "^0.4.2",
         "ndarray-fill": "^1.0.2",
         "object-pool": "^0.2.0",
