@@ -56,12 +56,11 @@ Read the documentation below to find out more</p>
 
 - All the best proxies
 - Nice game library
-- Chatbox connected to discord
 - Tab cloaking and other cool features
 - Basic auth
 - Customizable CSS
 - Installable PWA
-- Looks good
+- Build in youtube downloader
 
 ## Pages
 
@@ -74,6 +73,7 @@ Read the documentation below to find out more</p>
 - `/6` Documentation
 - `/7` Credits
 - `/8` Support and Contact
+- `/9` Youtube
 - `/404` 404 Error
 
 ## Setup

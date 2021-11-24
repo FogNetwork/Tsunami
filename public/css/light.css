@@ -161,3 +161,8 @@ color: black;
 body[appearance="light"] .link {
 color: black !important;
 }
+
+body[appearance="light"] #searchyoutube {
+  color: black;
+  border: 1.5px solid black;
+}
