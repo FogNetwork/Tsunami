@@ -386,7 +386,7 @@ position: fixed;
 bottom: 80px;
 justify-content: center;
 align-items: center;
-width: 200px;
+width: fit-content;
 height: 40px;
 background: transparent;
 right: 0;
@@ -398,6 +398,7 @@ border-radius: 2.5px;
 text-align: center;
 color: white;
 display: none;
+padding: 5px;
 }
 
 .infoitem {
