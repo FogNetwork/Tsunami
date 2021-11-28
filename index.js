@@ -33,7 +33,7 @@ const proxy = new Corrosion({
 
 proxy.bundleScripts();
 
-const palladium = new (PalladiumProxy)({
+const palladium = new PalladiumProxy({
   encode: "xor",
   ssl: "false",
   prefix: "/palladium/",
