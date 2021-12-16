@@ -1,12 +1,12 @@
 var palladiumproxy = window.location.protocol + "//" + window.location.hostname + "/palladium/gateway?url="
-
+var power="https://f.schoolbooks.ga/"
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
-
-var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
-
-var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
-
-
+var siteproxy="https://e.schoolbooks.ga/https/"
+var womginxproxy = "https://a.schoolbooks.ga"+"/main/"
+var miniprox="https://geographystudies4school.000webhostapp.com/history.php?"
+var pydodgeproxy = "https://algebrapractice.herokuapp.com/course/"
+var nodeproxy="https://c.schoolbooks.ga"+"/proxy/"
+var censordodge="https://b.schoolbooks.ga/p13?cdURL="
 window.onload = function() {
     
 search = document.getElementById("search");
@@ -54,10 +54,20 @@ if (currentproxy == "Palladium") {
 return palladiumproxy + url
 } else if (currentproxy == "Corrosion") {
 return corrosionproxy + url
-} else if (currentproxy == "Womginx") {
+}else if (currentproxy == "Power") {
+return power + url
+}else if (currentproxy == "Site") {
+return siteproxy + url
+}else if (currentproxy == "Mini") {
+return miniprox + url
+}else if (currentproxy == "Censor") {
+return censordodge + btoa(url)}else if (currentproxy == "Node") {
+return nodeproxy + url} else if (currentproxy == "Womginx") {
 return womginxproxy + url
 } else if (currentproxy == "PyDodge") {
 return pydodgeproxy + url
+}else if(currentproxy=="Mini"){
+  return miniprox+url
 }
 }
 
@@ -93,11 +103,15 @@ surf.contentWindow.location.reload()
 
 window.addEventListener('load', function() {
 var currentproxy = localStorage.getItem("proxy")
+var site=document.getElementById("site")
 var palladium = document.getElementById("palladium")
 var corrosion = document.getElementById("corrosion")
 var womginx = document.getElementById("womginx")
 var pydodge = document.getElementById("pydodge")
-
+var node=document.getElementById("node")
+var censor=document.getElementById("censor")
+var mini=document.getElementById("mini")
+var powers=document.getElementById("power")
 if (localStorage.getItem("proxy") !== null) {
 var currentproxy2 = currentproxy.toLowerCase()
 document.getElementById(currentproxy2).classList.add("proxysel")
@@ -109,23 +123,92 @@ function setproxy(proxy) {
 localStorage.setItem("proxy", proxy)
 if (proxy == "Palladium") {
 palladium.classList.add("proxysel")
+
+powers.classList.remove("proxysel")
+site.classList.remove("proxysel")
+mini.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
 womginx.classList.remove("proxysel")
+node.classList.remove("proxysel")
+censor.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
-} else if (proxy == "Corrosion") {
+} else if (proxy == "Corrosion") {powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
 palladium.classList.remove("proxysel")
+mini.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
 womginx.classList.remove("proxysel")
 pydodge.classList.remove("proxysel")
-} else if (proxy == "Womginx") {
+node.classList.remove("proxysel")
+censor.classList.remove("proxysel")
+} else if (proxy == "Womginx") {powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
 palladium.classList.remove("proxysel")
+mini.classList.remove("proxysel")
+censor.classList.remove("proxysel")
+node.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
 womginx.classList.add("proxysel")
 pydodge.classList.remove("proxysel")
-} else if (proxy == "PyDodge") {
+} else if (proxy == "PyDodge") {powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
+  node.classList.remove("proxysel")
+  mini.classList.remove("proxysel")
 palladium.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
+censor.classList.remove("proxysel")
 womginx.classList.remove("proxysel")
 pydodge.classList.add("proxysel")
+}else if(proxy=="Node"){powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
+  node.classList.add("proxysel")
+  mini.classList.remove("proxysel")
+  censor.classList.remove("proxysel")
+  palladium.classList.remove("proxysel")
+corrosion.classList.remove("proxysel")
+womginx.classList.remove("proxysel")
+pydodge.classList.remove("proxysel")
+}else if(proxy=="Censor"){powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
+  censor.classList.add("proxysel")
+  mini.classList.remove("proxysel")
+   node.classList.remove("proxysel")
+  palladium.classList.remove("proxysel")
+corrosion.classList.remove("proxysel")
+womginx.classList.remove("proxysel")
+pydodge.classList.remove("proxysel")
+}
+else if(proxy=="Mini"){powers.classList.remove("proxysel")
+  site.classList.remove("proxysel")
+  mini.classList.add("proxysel")
+  censor.classList.remove("proxysel")
+  
+   node.classList.remove("proxysel")
+  palladium.classList.remove("proxysel")
+corrosion.classList.remove("proxysel")
+womginx.classList.remove("proxysel")
+pydodge.classList.remove("proxysel")
+}
+else if(proxy=="Site"){powers.classList.remove("proxysel")
+  site.classList.add("proxysel")
+  mini.classList.remove("proxysel")
+  censor.classList.remove("proxysel")
+  
+   node.classList.remove("proxysel")
+  palladium.classList.remove("proxysel")
+corrosion.classList.remove("proxysel")
+womginx.classList.remove("proxysel")
+pydodge.classList.remove("proxysel")
+}else if(proxy=="Power"){
+  powers.classList.add("proxysel")
+  site.classList.remove("proxysel")
+  mini.classList.remove("proxysel")
+  censor.classList.remove("proxysel")
+  
+   node.classList.remove("proxysel")
+  palladium.classList.remove("proxysel")
+corrosion.classList.remove("proxysel")
+womginx.classList.remove("proxysel")
+pydodge.classList.remove("proxysel")
 }
 }
