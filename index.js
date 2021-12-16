@@ -6,6 +6,12 @@ MIT license: https://opensource.org/licenses/MIT
 
 const express = require("express")
 const app = express()
+var Unblocker = require('unblocker');
+
+var unblocker = new Unblocker({prefix: '/proxy/'});
+
+// this must be one of the first app.use() calls and must not be on a subdirectory to work properly
+app.use(unblocker);
 const basicAuth = require("express-basic-auth");
 const config = require("./config.json")
 const port = process.env.PORT || config.port
