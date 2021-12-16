@@ -1,4 +1,6 @@
+importScripts('https://arc.io/arc-sw-core.js')
 var cacheName = 'tsunami';
+
 var filesToCache = [
   '/sw.js'
 ];
