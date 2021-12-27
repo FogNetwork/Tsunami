@@ -2,10 +2,7 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
-
-var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
-
+var aeroproxy = window.location.protocol + "//" + "a." + window.location.hostname + "/http/"
 
 window.onload = function() {
     
@@ -54,10 +51,8 @@ if (currentproxy == "Palladium") {
 return palladiumproxy + url
 } else if (currentproxy == "Corrosion") {
 return corrosionproxy + url
-} else if (currentproxy == "Womginx") {
-return womginxproxy + url
-} else if (currentproxy == "PyDodge") {
-return pydodgeproxy + url
+} else if (currentproxy == "Aero") {
+return aeroproxy + url
 }
 }
 
@@ -95,8 +90,7 @@ window.addEventListener('load', function() {
 var currentproxy = localStorage.getItem("proxy")
 var palladium = document.getElementById("palladium")
 var corrosion = document.getElementById("corrosion")
-var womginx = document.getElementById("womginx")
-var pydodge = document.getElementById("pydodge")
+var aero = document.getElementById("aero")
 
 if (localStorage.getItem("proxy") !== null) {
 var currentproxy2 = currentproxy.toLowerCase()
@@ -110,22 +104,14 @@ localStorage.setItem("proxy", proxy)
 if (proxy == "Palladium") {
 palladium.classList.add("proxysel")
 corrosion.classList.remove("proxysel")
-womginx.classList.remove("proxysel")
-pydodge.classList.remove("proxysel")
+aero.classList.remove("proxysel")
 } else if (proxy == "Corrosion") {
 palladium.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
-womginx.classList.remove("proxysel")
-pydodge.classList.remove("proxysel")
-} else if (proxy == "Womginx") {
+aero.classList.remove("proxysel")
+} else if (proxy == "Aero") {
 palladium.classList.remove("proxysel")
 corrosion.classList.remove("proxysel")
-womginx.classList.add("proxysel")
-pydodge.classList.remove("proxysel")
-} else if (proxy == "PyDodge") {
-palladium.classList.remove("proxysel")
-corrosion.classList.remove("proxysel")
-womginx.classList.remove("proxysel")
-pydodge.classList.add("proxysel")
+aero.classList.add("proxysel")
 }
 }

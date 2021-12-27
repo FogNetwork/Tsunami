@@ -78,7 +78,7 @@ Read the documentation below to find out more</p>
 
 ## Setup
 
-**Please Note: Womginx and PyDodge will not work without deploying are hosted on subdomains, see [proxies](#proxies) for more info**
+**Please Note: Aero needs to be on a subdomain, see [proxies](#proxies) for more info**
 
 ### Locally
 
@@ -102,9 +102,7 @@ Some of the proxies on Tsunami are hosted on subdomains, deploy the correct prox
 
 Palladium and Corrosion are hosted locally, so you don't need a subdomain
 
-[w.example.com (Womginx)](https://github.com/binary-person/womginx)
-
-[p.example.com (PyDodge)](https://github.com/BinBashBanana/PyDodge)
+[a.example.com (Aero)](https://github.com/titaniumnetwork-dev/aero)
 
 [Locally (Palladium)](https://github.com/FogNetwork/Palladium)
 
@@ -117,7 +115,6 @@ Palladium and Corrosion are hosted locally, so you don't need a subdomain
 ```json
 {
     "port": "8080",
-    "lite": "false",
     "auth": "false",
     "username": "user",
     "password": "secret"
@@ -125,8 +122,6 @@ Palladium and Corrosion are hosted locally, so you don't need a subdomain
 ```
 
 `"port": "8080"` Changes the port 
-
-`"lite": "false"` Hides Womginx and PyDodge, set to true or false 
 
 `"auth": "false"` Basic authentication, set to true or false
 
@@ -141,17 +136,13 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-var womginxproxy = window.location.protocol + "//" + "w." + window.location.hostname + "/main/"
-
-var pydodgeproxy = window.location.protocol + "//" + "p." + window.location.hostname + "/course/"
+var aeroproxy = window.location.protocol + "//" + "a." + window.location.hostname + "/http/"
 ```
 `palladiumproxy` Location for Palladium proxy
 
 `corrosionproxy` Location for Corrosion proxy
 
-`womginx` Location for Womginx proxy
-
-`pydodgeproxy` Location for PyDodge proxy
+`aeroproxy` Location for Aero proxy
 
 Custom Proxy Example:
 
@@ -189,9 +180,11 @@ Nebelung - [Nebelung#1335](https://discord.com/users/887118260963782686)
 
 [Modified Corrosion](https://github.com/BinBashBanana/Corrosion-Heroku)
 
-[Womginx](https://github.com/binary-person/womginx)
+[Aero](https://github.com/titaniumnetwork-dev/aero)
 
-[PyDodge](https://github.com/BinBashBanana/PyDodge)
+[Womginx](https://github.com/binary-person/womginx) (Not Used)
+
+[PyDodge](https://github.com/BinBashBanana/PyDodge) (Not Used)
 
 [Alloy](https://github.com/titaniumnetwork-dev/alloy) (Not Used)
 
@@ -223,10 +216,8 @@ Nebelung - [Nebelung#1335](https://discord.com/users/887118260963782686)
 
 [Shirt](https://github.com/shirt-dev) - Proxy Developer
 
-[Karlee Rae](https://github.com/KarleeRae) - MinecraftJS
-
 ### Contributing
 
 See [CONTRIBUTING.md](https://github.com/FogNetwork/Tsunami/blob/main/CONTRIBUTING.md)
 
-Special Thanks Quite A Fancy Emerald, Inspiration for Tsunami
+Special Thanks To Quite A Fancy Emerald, Inspiration for Tsunami

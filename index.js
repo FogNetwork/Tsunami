@@ -11,7 +11,6 @@ const config = require("./config.json")
 const port = process.env.PORT || config.port
 const Corrosion = require("./lib/server")
 const PalladiumProxy = require("./palladium/server")
-const lite = config.lite
 const auth = config.auth
 const username = config.username
 const password = config.password
@@ -54,18 +53,6 @@ function autherror(req) {
     return req.auth
         ? ("Credentials " + req.auth.user + ":" + req.auth.password + " rejected")
         : "Error"
-}
-
-if (lite == "true") {
-
-app.get("/", function(req, res){
-    res.sendFile("index.html", {root: "./lite"});
-});
-
-app.get("/js/go.js", function(req, res){
-    res.sendFile("go.js", {root: "./lite"});
-});
-
 }
 
 app.use(express.static("./public", {
