@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>%TITLE%</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<center>
+<video src="%SRC%" poster="%POSTER%" class="video" width="70%" controls></video>
+<h1 class="title">%TITLE%</h1>
+<h3 class="channel">%CHANNEL%</h3>
+<p class="description">%DESCRIPTION%</p>
+</center>
+</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: Roboto;
+}
+
+body {
+  background-color: #121212;
+}
+
+.video {
+  margin-top: auto;
+}
+
+.title, .channel, .description {
+  color: white;
+}
+
+center {
+  display: block;
+  text-align: -webkit-center;
+}
+</style>

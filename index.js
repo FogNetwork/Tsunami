@@ -16,7 +16,7 @@ const username = config.username
 const password = config.password
 const users = {}
 users[username] = password
-const ytdl = require("ytdl-core");
+const mist = require("./mist");
 
 const proxy = new Corrosion({
     prefix: "/corrosion/",
@@ -63,21 +63,12 @@ app.get("/", function(req, res){
     res.sendFile("index.html", {root: "./public"});
 });
 
-app.get("/watch", (req, res) => {
-  const url = "https://www.youtube.com/watch?v=" + req.query.v
-  if (req.query.audio !== "true") {
-  ytdl(url).on("response", response => {
-  res.setHeader("content-length", response.headers["content-length"])
-  }).pipe(res)
-  } else {
-  ytdl(url, {filter: "audioonly"}).on("response", response => {
-  res.setHeader("content-length", response.headers["content-length"])
-  }).pipe(res)
-  }
-});
-
 app.use(function (req, res) {
-    if (req.url.startsWith(proxy.prefix)) {
+    if (req.url.startsWith("/watch")) {
+      mist.watch(req, res)
+    } else if (req.url.startsWith("/video")) {
+      mist.video(req, res)
+    } else if (req.url.startsWith(proxy.prefix)) {
       proxy.request(req,res);
     } else if (req.url.startsWith(palladium.prefix)) {
       return palladium.request(req, res)

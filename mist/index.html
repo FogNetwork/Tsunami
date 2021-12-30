@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Mist</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="title">Mist</div>
+<center>
+<input autocomplete="off" autofocus placeholder="Enter youtube URL or ID" id="searchyoutube">
+<br>
+<h3 class="audio">Audio</h3>
+<button onclick="toggleaudio()" id="audiobtn">Off</button>
+</center>
+
+<div class="footer">Fog Network <script>document.write(new Date().getFullYear())</script> | <a class="link" href="https://github.com/FogNetwork/Mist">Github</a></div>
+</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: Roboto;
+}
+
+body {
+  background-color: #121212;
+}
+
+::placeholder {
+  color: #666666;
+}
+
+.title {
+  margin-top: 75px;
+  color: white;
+  text-align: center;
+  font-size: 80px;
+}
+
+.audio {
+  color: white;
+  font-size: 25px;
+  display: inline-flex;
+}
+
+#searchyoutube {
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 8px;
+  border: 1.5px solid white;
+  font-size: 16px;
+  height: 30px;
+  background-color: rgb(16,16,16,0);
+}
+
+#audiobtn {
+  width: 62px;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1.5px solid white;
+  font-size: 15px;
+  height: 35px;
+  background-color: rgb(16,16,16,0);
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.activebtn {
+  background: white !important;
+  color: black !important;
+}
+
+.footer {
+  color: white;
+  position: fixed;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+</style>
+
+<script>
+window.addEventListener('load', function() {
+searchyoutube = document.getElementById("searchyoutube");
+var audiobtn = document.getElementById("audiobtn")
+searchyoutube.addEventListener('keyup', function onEvent(e) {
+    if (e.keyCode === 13) {
+        var videoid = searchyoutube.value
+        if (videoid.startsWith("https://www.youtube.com/watch?v=")) {
+        if (audiobtn.innerText == "On") return [window.location.href = "/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1] + "&audio=true", searchyoutube.value = ""];
+        window.location.href = "/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1]
+        } else {
+        if (audiobtn.innerText == "On") return [window.location.href = "/watch?v=" + videoid + "&audio=true", searchyoutube.value = ""];
+        window.location.href = "/watch?v=" + videoid
+        }
+        searchyoutube.value = ""
+    }
+});
+})
+
+function toggleaudio() {
+var audiobtn = document.getElementById("audiobtn")
+if (audiobtn.innerText == "Off") {
+audiobtn.innerText = "On"
+audiobtn.className = "activebtn"
+} else {
+audiobtn.innerText = "Off"
+audiobtn.className = ""
+}
+}
+</script>
