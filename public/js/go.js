@@ -2,8 +2,6 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-var aeroproxy = window.location.protocol + "//" + "a." + window.location.hostname + "/http/"
-
 window.onload = function() {
     
 search = document.getElementById("search");
@@ -51,8 +49,6 @@ if (currentproxy == "Palladium") {
 return palladiumproxy + url
 } else if (currentproxy == "Corrosion") {
 return corrosionproxy + url
-} else if (currentproxy == "Aero") {
-return aeroproxy + url
 }
 }
 
@@ -90,7 +86,6 @@ window.addEventListener('load', function() {
 var currentproxy = localStorage.getItem("proxy")
 var palladium = document.getElementById("palladium")
 var corrosion = document.getElementById("corrosion")
-var aero = document.getElementById("aero")
 
 if (localStorage.getItem("proxy") !== null) {
 var currentproxy2 = currentproxy.toLowerCase()
@@ -104,14 +99,8 @@ localStorage.setItem("proxy", proxy)
 if (proxy == "Palladium") {
 palladium.classList.add("proxysel")
 corrosion.classList.remove("proxysel")
-aero.classList.remove("proxysel")
 } else if (proxy == "Corrosion") {
 palladium.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
-aero.classList.remove("proxysel")
-} else if (proxy == "Aero") {
-palladium.classList.remove("proxysel")
-corrosion.classList.remove("proxysel")
-aero.classList.add("proxysel")
 }
 }

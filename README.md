@@ -78,8 +78,6 @@ Read the documentation below to find out more</p>
 
 ## Setup
 
-**Please Note: Aero needs to be on a subdomain, see [proxies](#proxies) for more info**
-
 ### Locally
 
 ```sh
@@ -98,11 +96,7 @@ Click one of the buttons above and follow the steps
 
 ### Proxies
 
-Some of the proxies on Tsunami are hosted on subdomains, deploy the correct proxy for Tsunami to work
-
 Palladium and Corrosion are hosted locally, so you don't need a subdomain
-
-[a.example.com (Aero)](https://github.com/titaniumnetwork-dev/aero)
 
 [Locally (Palladium)](https://github.com/FogNetwork/Palladium)
 
@@ -136,13 +130,10 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-var aeroproxy = window.location.protocol + "//" + "a." + window.location.hostname + "/http/"
 ```
 `palladiumproxy` Location for Palladium proxy
 
 `corrosionproxy` Location for Corrosion proxy
-
-`aeroproxy` Location for Aero proxy
 
 Custom Proxy Example:
 
@@ -180,7 +171,7 @@ Nebelung - [Nebelung#1335](https://discord.com/users/887118260963782686)
 
 [Modified Corrosion](https://github.com/BinBashBanana/Corrosion-Heroku)
 
-[Aero](https://github.com/titaniumnetwork-dev/aero)
+[Aero](https://github.com/titaniumnetwork-dev/aero) (Not Used)
 
 [Womginx](https://github.com/binary-person/womginx) (Not Used)
 
