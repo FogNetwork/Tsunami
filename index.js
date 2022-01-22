@@ -16,7 +16,7 @@ const username = config.username
 const password = config.password
 const users = {}
 users[username] = password
-const mist = require("./mist");
+const mist = require("mist-yt");
 
 const proxy = new Corrosion({
     prefix: "/corrosion/",
