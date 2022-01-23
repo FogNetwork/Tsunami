@@ -166,3 +166,18 @@ body[appearance="light"] #searchyoutube {
   color: black;
   border: 1.5px solid black;
 }
+
+body[appearance="light"] #suggestions {
+  border: 2.5px solid black;
+  border-top: none;
+  background: white;
+}
+
+body[appearance="light"] .sugg {
+  color: black;
+}
+
+body[appearance="light"] .sugg:hover {
+  background: black;
+  color: white;
+}

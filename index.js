@@ -17,6 +17,7 @@ const password = config.password
 const users = {}
 users[username] = password
 const mist = require("mist-yt");
+const fetch = require("node-fetch");
 
 const proxy = new Corrosion({
     prefix: "/corrosion/",
@@ -61,6 +62,17 @@ app.use(express.static("./public", {
 
 app.get("/", function(req, res){
     res.sendFile("index.html", {root: "./public"});
+});
+
+app.get("/suggestions", function(req, res){
+async function getsuggestions() {
+var term = req.query.q || "";
+var response = await fetch("https://duckduckgo.com/ac/?q=" + term + "&type=list");
+var result = await response.json();
+var suggestions = result[1]
+res.send(suggestions)
+}
+getsuggestions()
 });
 
 app.use(function (req, res) {

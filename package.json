@@ -47,6 +47,7 @@
         "mist-yt": "^1.2.0",
         "ndarray-continuous": "^0.4.2",
         "ndarray-fill": "^1.0.2",
+        "node-fetch": "^2.1.0",
         "object-pool": "^0.2.0",
         "opn": "^6.0.0",
         "palladiumub": "^1.2.0",

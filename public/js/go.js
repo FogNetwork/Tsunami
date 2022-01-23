@@ -2,31 +2,6 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-window.onload = function() {
-    
-search = document.getElementById("search");
-search.addEventListener('keyup', function onEvent(e) {
-    if (e.keyCode === 13) {
-        go(search.value)
-    }
-});
-
-
-function go(url) {
-if (url !== '') {
-if (url.includes('.')) {
-open(url)
-} else if (url.startsWith('https://')) {
-open(url)
-} else if (url.startsWith('http://')) {
-open(url)
-} else {
-searchurl(url)
-}
-} else {
-return false;
-}
-}
 
 function searchurl(url) {
   var search = localStorage.getItem("search")
@@ -64,7 +39,31 @@ surf.setAttribute("src", getproxy(url));
 document.getElementById("search").value = "";
 }
 }
+
+function go(url) {
+if (url !== '') {
+if (url.includes('.')) {
+open(url)
+} else if (url.startsWith('https://')) {
+open(url)
+} else if (url.startsWith('http://')) {
+open(url)
+} else {
+searchurl(url)
+}
+} else {
+return false;
+}
+}
+
+window.onload = function() {
     
+search = document.getElementById("search");
+search.addEventListener('keyup', function onEvent(e) {
+    if (e.keyCode === 13) {
+        go(search.value)
+    }
+});
 };
 
 function closesurf() {
@@ -104,3 +103,70 @@ palladium.classList.remove("proxysel")
 corrosion.classList.add("proxysel")
 }
 }
+
+
+function hidesugg() {
+  document.getElementById("search").style.borderRadius = "5px";
+  document.getElementById("suggestions").style.display = "none"
+}
+
+function showsugg() {
+  document.getElementById("search").style.borderRadius = "5px 5px 0 0";
+  document.getElementById("suggestions").style.display = "inherit"
+}
+
+function sugggo(suggtext) {
+  go(suggtext)
+  document.getElementById("search").value = ""
+}
+
+window.addEventListener("load", function() {
+var search = document.getElementById("search")
+search.addEventListener("keyup", function(event) {
+    event.preventDefault()
+    if (event.keyCode == 13)
+        if (this.value !== "") {
+             go(this.value)
+             this.value = ""
+        }
+});
+search.addEventListener("keyup", function(event) {
+event.preventDefault()
+if (search.value.trim().length !== 0) {
+document.getElementById("suggestions").innerText = ""
+showsugg()
+async function getsuggestions() {
+var term = search.value || "";
+var response = await fetch("/suggestions?q=" + term);
+var result = await response.json();
+var suggestions = result.slice(0, 8);
+for (sugg in suggestions) {
+var suggestion = suggestions[sugg]
+var sugg = document.createElement("div")
+sugg.innerText = suggestion
+sugg.setAttribute("onclick", "sugggo(this.innerText)")
+sugg.className = "sugg"
+document.getElementById("suggestions").appendChild(sugg)
+}
+}
+getsuggestions()
+} else {
+hidesugg()
+}
+});
+
+search.addEventListener("click", function(event) {
+if (search.value.trim().length !== 0) {
+showsugg()
+}
+})
+
+})
+
+function hidesettings(){
+if(window.event.srcElement.id !== "search" && window.event.srcElement.id !== "suggestions"){
+hidesugg()
+}
+}
+
+document.onclick = hidesettings

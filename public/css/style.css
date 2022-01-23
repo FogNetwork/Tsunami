@@ -97,7 +97,7 @@ outline: none;
 border: 2.5px solid white;
 font-size: 16px;
 padding: 5px;
-width: 45%;
+width: 700px;
 height: 30px;
 background-color: rgb(16,16,16,0);
 padding-left: 40px;
@@ -584,4 +584,34 @@ border: 1.5px solid white;
 font-size: 16px;
 height: 30px;
 background-color: rgb(16,16,16,0);
+}
+
+#suggestions {
+display: none;
+width: 746px;
+height: 272px;
+border: 2.5px solid white;
+border-radius: 0 0 5px 5px;
+border-top: none;
+overflow: hidden;
+position: absolute;
+background: #121212;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: left;
+}
+
+.sugg {
+color: white;
+font-size: 20px;
+cursor: pointer;
+padding: 5px;
+padding-left: 10px;
+}
+
+.sugg:hover {
+background: white;
+color: black;
 }
