@@ -44,7 +44,7 @@
         "jsdom": "^18.0.0",
         "kb-controls": "^0.2.0",
         "mime": "^3.0.0",
-        "mist-yt": "^1.2.0",
+        "mist-yt": "^1.5.0",
         "ndarray-continuous": "^0.4.2",
         "ndarray-fill": "^1.0.2",
         "node-fetch": "^2.1.0",
