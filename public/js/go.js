@@ -2,7 +2,6 @@ var palladiumproxy = window.location.protocol + "//" + window.location.hostname 
 
 var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
 
-
 function searchurl(url) {
   var search = localStorage.getItem("search")
   if (search == "Google") {
@@ -104,10 +103,9 @@ corrosion.classList.add("proxysel")
 }
 }
 
-
 function hidesugg() {
   document.getElementById("search").style.borderRadius = "5px";
-  document.getElementById("suggestions").style.display = "none"
+  document.getElementById("suggestions").style.display = "none";
 }
 
 function showsugg() {
@@ -116,8 +114,11 @@ function showsugg() {
 }
 
 function sugggo(suggtext) {
+  if (localStorage.getItem("proxy") !== null) {
   go(suggtext)
   document.getElementById("search").value = ""
+  hidesugg()
+  }
 }
 
 window.addEventListener("load", function() {
@@ -130,6 +131,7 @@ search.addEventListener("keyup", function(event) {
              this.value = ""
         }
 });
+
 search.addEventListener("keyup", function(event) {
 event.preventDefault()
 if (search.value.trim().length !== 0) {
@@ -163,10 +165,10 @@ showsugg()
 
 })
 
-function hidesettings(){
-if(window.event.srcElement.id !== "search" && window.event.srcElement.id !== "suggestions"){
+function hidesuggclick(){
+if (window.event.srcElement.id !== "search" && window.event.srcElement.id !== "suggestions" && window.event.srcElement.className !== "sugg") {
 hidesugg()
 }
 }
 
-document.onclick = hidesettings
+document.onclick = hidesuggclick
