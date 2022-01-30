@@ -7,10 +7,6 @@ if (config.title) {
   setInterval(() => {if (document.title!==config.title) document.title = config.title}, 100)
 }
 
-/*if (!location.pathname.startsWith(config.prefix)) {
-  location.href = config.prefix + 'gateway?url=' + location.pathname.replace(config.prefix, '')
-}*/
-
 
 var encoding = (ctx) => {
   switch(ctx.encode) {
@@ -27,6 +23,7 @@ var encoding = (ctx) => {
     case "xor":
       return {
         encode(str) {
+          str = str.replace('https://', 'https:/').replace('https:/', 'https://')
           return (encodeURIComponent(str.split('').map((char,ind)=>ind%2?String.fromCharCode(char.charCodeAt()^2):char).join('')));
         },
         decode(str) {
@@ -36,7 +33,7 @@ var encoding = (ctx) => {
       }
       break;
     case "base64":
-      return {
+      if (typeof window == 'undefined') return {
         encode(str) {
           return new Buffer.from(str).toString("base64");
         },
@@ -46,7 +43,17 @@ var encoding = (ctx) => {
           }
           return new Buffer.from(str, "base64").toString("utf-8");
         }
-      }
+      }; else return {
+        encode(str) {
+          return btoa(str)
+        },
+        decode(str) {
+          if (btoa(str).startsWith('http')) {
+            return str
+          }
+          return atob(str.split('/')[0])+str.split('/')[1]
+        }
+      };
       break;
     default:
       return {
@@ -62,7 +69,10 @@ var encoding = (ctx) => {
 
 if (typeof module !== undefined) module.exports = encoding;
 const oFetch = window.fetch,
-  oXHR = window.XMLHttpRequest.prototype.open;
+  XHR = window.XMLHttpRequest,
+  oXHR = window.XMLHttpRequest.prototype.open,
+  oPMessage = window.postMessage,
+  oSBeacon = window.Navigator.prototype.sendBeacon;
 
 var ctx = {
   prefix: config.prefix,
@@ -70,33 +80,146 @@ var ctx = {
   config: {
     encode: config.encode,
   },
-  getRequestUrl: (req) => {return this.encoding.decode(req.url.split(defaults.prefix)[1].replace(/\/$/g, ''))},
+  encode: config.encode,
+  getRequestUrl: (req) => {return this.encoding.decode(req.url.split(this.prefix)[1].replace(/\/$/g, ''))},
 }
 
 ctx.encoding = encoding(ctx)
 
 window.fetch = function(url, opts) {
+  if (typeof url == 'object') {
+    opts = url
+    url = url.url
+    return oFetch.apply(this, arguments)
+  }
   if (url) url = new Base(ctx).url(url)
-  oFetch.apply(this, arguments)
+  return oFetch.apply(this, arguments)
 }
 
 window.XMLHttpRequest.prototype.open = function(method, url, async, user, password) {
   if (url) url = new Base(ctx).url(url)
-  console.log(url)
-  oXHR.apply(this, arguments)
+  return oXHR.apply(this, arguments)
 }
+
+window.postMessage = function(msg, origin, transfer) {
+  if (origin) origin = location.origin;
+  return oPMessage.apply(this, arguments);
+};
+window.Navigator.prototype.sendBeacon = function(url, data) {
+  if (url) url = new Base(ctx).url(url);
+  return oSBeacon.apply(this, arguments);
+};
 
 window.WebSocket = new Proxy(window.WebSocket, {
   construct(target, args) {
-    args[0] = (location.protocol=='https:' ? 'wss:' : 'ws:') + '//' + location.origin.split('/').splice(2).join('/') + config.prefix + '?ws=' + ctx.encoding.encode(args[0].replace('ws', 'http')).replace('http', 'ws') + '&origin=' + new URL(config.url).origin;
-    //console.log((location.protocol=='https:' ? 'wss:' : 'ws:') + '//' + location.origin.split('/').splice(2).join('/') + config.prefix + '?ws=' + ctx.encoding.encode(args[0].replace('ws', 'http')) + '&origin=' + new URL(config.url).origin)
+    if (args[0].includes('?')) var todo = '&'; else var todo = '?'
+    args[0] = (location.protocol=='https:' ? 'wss:' : 'ws:') + '//' + location.origin.split('/').splice(2).join('/') + config.prefix + '?ws='+args[0].replace(location.origin.split('/').splice(2).join('/'), pLocation.origin.split('/').splice(2).join('/'))+ todo+'origin=' + new URL(config.url).origin;
     return Reflect.construct(target, args);
   }
 });
-function blackList(ctx) {
-  if (ctx.middleware.blackList) {
-    
-  } else return ctx
+
+/*var lStorageOrigin = window.localStorage
+
+window._localStorage = new Proxy({}, {
+  set(value, prop) {
+    if (prop=='getItem') {
+      return ''
+    }
+    if (prop=='setItem') {
+      return ''
+    }
+    return localStorage[new URL(config.url).hostname+prop] = value
+  },
+  get(value, prop) {
+    if (prop=='getItem') {
+      return function() {
+        var args = arguments
+        return localStorage[new URL(config.url).hostname+args[0]]
+      }
+    }
+    if (prop=='setItem') {
+      return function() {
+        var args = arguments
+        return localStorage[new URL(config.url).hostname+args[0]] = args[1]
+      }
+    }
+    return localStorage[new URL(config.url).hostname+prop]
+  }
+})
+
+/*
+
+Object.defineProperty(window, 'localStorage', {
+  get() {
+    return lStorageOrigin
+  },
+  set(value) {
+    lStorageOrigin = value
+  }
+})
+
+Object.keys(window.localStorage).forEach(key => {
+  if (key.startsWith(new URL(config.url).hostname)) {
+    localStorage[key] = localStorage[key]
+  } else {
+    var nkey = localStorage[key]
+    //localStorage.removeItem(key)
+    window.addEventListener('beforeunload', () => {
+      localStorage[key] = nkey
+    })
+  }
+})
+/*
+Object.defineProperty(window.localStorage, 'setItem', {
+
+})
+
+window.RTCPeerConnection = new Proxy(RTCPeerConnection, {
+  construct(target, args) {
+    if (args[1].urls.startsWith('turns:')) {
+      args[1].username += `|${args[1].urls}`;
+      args[1].urls = `turns:${location.host}`;
+      return Reflect.apply(...arguments);
+    } else if (args[1].urls.startsWith('stuns'))
+      console.warn("STUN connections aren't supported!");
+  }
+});*/
+
+window.Worker = new Proxy(window.Worker, {
+  construct: (target, args) => {
+    if (args[0])  {
+      if (args[0].trim().startsWith(`blob:${pLocation.origin}`)) {
+        const xhr = new XHR
+        xhr.open('GET', args[0], false);
+        xhr.send();
+        const script = new JSRewriter(ctx)(xhr.responseText, ctx.location.origin + args[0].trim().slice(`blob:${ctx.window.location.origin}`.length), ctx);
+        const blob = new Blob([ script ], { type: 'application/javascript' });
+        args[0] = URL.createObjectURL(blob);
+      } else {
+        args[0] = new Base(ctx).url(args[0]);
+      };
+    };
+    return Reflect.construct(target, args);
+  },
+}); 
+function blackList(list, reason = 'Website Blocked') {
+  return (ctx) => {
+    try {if(list.indexOf(new URL(ctx.url).hostname)>-1) {
+      ctx.response.end(reason)
+    }} catch {}
+  }
+}
+
+function allow(list, config) {
+  return function(ctx) {
+    try {if(list.indexOf(new URL(ctx.url).hostname)==-1) {
+      if (config[0]=='redirect') {
+        ctx.response.writeHead(301, {location: ctx.prefix+'gateway?url='+config[1]}).end('')
+      } else {
+        ctx.response.end(config[1])
+      }
+    }} catch {}
+  }
 }
 
 function force(ctx) {
@@ -105,6 +228,16 @@ function force(ctx) {
 
 if (!typeof module !== undefined) module.exports.blackList = blackList;
 if (typeof module !== undefined) module.exports.force = force;
+module.exports.allow = allow;
+class JSRewriter {
+  constructor(data, ctx) {
+    return function JS(data, ctx) {
+      return data.toString().replace(/(,| |=|\()document.location(,| |=|\)|\.)/gi, str => { return str.replace('.location', `.pLocation`); }).replace(/(,| |=|\()window.location(,| |=|\)|\.)/gi, str => { return str.replace('.location', `.pLocation`); })/*.replace(/(,| |=|\()location(,| |=|\)|\.)/gi, str => { return str.replace('location', `pLocation`); })*/.replace('myScript=scripts[index]||', 'myScript=')//.replace(/(localStorage|sessionStorage)/g, '_$1')//.replace(/location\s*=\s*/gi, 'PLocation = ')//.replace(/location\.([a-zA-Z0-9]*)/gi, 'pLocation.$1')//.replace(/\.href\s*=(["'` ]*)([a-zA-Z0-9]*)(['`" ]*)/gi, (match, p1, p2, p3) => {return '.phref = '+p1+new ctx.rewrite.Base(ctx).url(p2)+p3})
+    }
+  }
+}
+
+if (typeof module !== undefined) module.exports = JSRewriter
 //Client and Server Side
 
 class Base {
@@ -112,7 +245,26 @@ class Base {
     this.ctx = ctx
   }
   url(url, ext) { 
-    url = url.toString()
+    if (typeof window == 'undefined') {
+      function co(num) { return (num % 2)==1;}
+      var headers = this.ctx.req.rawHeaders || []
+      var fullHeaders = {}
+      headers.map((e, ind) => {
+        if (co(ind+1)) {
+          fullHeaders[e] = headers[ind+1]
+        }
+      })
+    }
+    var hostname = ((fullHeaders||{})['Host']||(fullHeaders||{})['host']||location.hostname)
+    if (!url) return url
+    /*
+    if (typeof url == 'object') {
+      throw new Error('no')
+      var object = url
+      console.log(object)
+      url = url.url
+    }*/
+    url = (url).toString()
     if (url.match(/^(javascript:|about:|mailto:|data:|blob:|#)/gi)) return url
     url = url.replace(/^\/\//, 'https://')
 
@@ -131,7 +283,7 @@ class Base {
     if (!this.ctx.encode==='base64') {
       url = this.ctx.encoding.decode(url)
     }
-    if (url.startsWith(this.ctx.prefix)) return url
+    if (url.startsWith(this.ctx.prefix)) return url;
     if (!url.startsWith('http')) {
       try {
         var host = new URL(this.ctx.url).hostname
@@ -143,9 +295,14 @@ class Base {
     if(new URL(url).protocol.startsWith('ws')) {
       console.log(new URLSearchParams(new URL(url).search))
     }
-
     if (url.includes('https://')) url = url.replace('https://', 'https:/')
-    if (!ext) return this.ctx.prefix + this.ctx.encoding.encode(url)
+    /*var test = 'https://'+hostname+this.ctx.prefix + this.ctx.encoding.encode(url.replace('../', '').replace('./', '').replace('http://', 'https://'))
+    test = this.ctx.encoding.decode(test.split(this.ctx.prefix)[1])
+    if (test.includes(this.ctx.prefix)) {
+      url = this.ctx.encoding.decode(test.split(this.ctx.prefix)[1])
+    }*/
+    var eslash = url.endsWith('/') ? '/' : ''
+    if (!ext) return /*'https://'+hostname+*/this.ctx.prefix + this.ctx.encoding.encode(url.replace('../', '').replace('./', '').replace('http://', 'https://'))+eslash
     return this.ctx.prefix + ext + this.ctx.encoding.encode(url)
   }
   element(attr, ext) {
@@ -200,6 +357,77 @@ Object.defineProperty(window, "PLocation", {
     return this.location;
   }
 });
+
+var pushstates = history.pushState;
+
+window.history.pushState = new Proxy(history.pushState, {
+  apply(target, thisArg, args) {
+  args[2] = new Base(ctx).url(args[2])
+  return Reflect.apply(target, thisArg, args)
+  }
+});
+
+window.history.replaceState = new Proxy(history.replaceState, {
+  apply(target, thisArg, args) {
+    args[2] = new Base(ctx).url(args[2])
+    return Reflect.apply(target, thisArg, args)
+  }
+});
+
+Object.defineProperty(document, 'domain', {
+  get() {
+    return new URL(ctx.url).hostname;
+  },
+  set(val) {
+    return val;
+  }
+});
+
+var oCookie = document.cookie
+
+Object.defineProperty(document, 'cookie', {
+  get() {
+    var cookie = Object.getOwnPropertyDescriptor(window.Document.prototype, 'cookie').get.call(this),
+      new_cookie = [],
+      cookie_array = cookie.split('; ');
+    cookie_array.forEach(cookie => {
+      const cookie_name = cookie.split('=').splice(0, 1).join(),
+        cookie_value = cookie.split('=').splice(1).join();
+      if (new URL(ctx.url).hostname.includes(cookie_name.split('@').splice(1).join())) new_cookie.push(cookie_name.split('@').splice(0, 1).join() + '=' + cookie_value);
+    });
+    return new_cookie.join('; ');;
+  },
+  set(val) {
+    Object.getOwnPropertyDescriptor(Document.prototype, 'cookie').set.call(this, val);
+  }
+})
+
+window.Worker = new Proxy(window.Worker, {
+  construct(target, args) {
+    if (args[0]) args[0] = new Base(ctx).url(args[0]);
+    return Reflect.construct(target, args);
+  }
+});
+
+if (config.title) {
+  var oTitle = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+  document.title = config.title
+  Object.defineProperty(Document.prototype, 'title', {
+    set(value) {
+      oTitle = config.title
+      return value
+    },
+    get() {
+      return config.title
+    }
+  })
+}
+
+if (location.search && !(new URLSearchParams(location.search).get('palladium-redir'))) {
+  var p1 = ctx.encoding.decode(location.pathname.split(config.prefix)[1])
+  console.log(p1+location.search+'&palladium-redir=true')
+  location.href = config.prefix+ctx.encoding.encode(p1+location.search+'&palladium-redir=true')
+}
 var proxify = {}
 
 proxify.elementHTML = element_array => {
@@ -271,6 +499,11 @@ proxify.elementAttribute = (element_array, attribute_array) => {
                         return Reflect.apply(target, thisArg, [ element_attribute, arr.join(', ') ]);
                     };
 
+                    if (array_attribute == 'http-equiv' && element_attribute.toLowerCase() == array_attribute) {
+                      value = 'No-U-Content-Security-Policy'
+                      return Reflect.apply(target, thisArg, [ element_attribute, value ])
+                    }
+
                     if (element_attribute.toLowerCase() == array_attribute) value = new Base(ctx).url(value || '');
                 });
                 return Reflect.apply(target, thisArg, [ element_attribute, value ]);
@@ -315,5 +548,71 @@ setInterval(() => {
     }
   })
 }, 100)
+
+var inserthtmlproto = Element.prototype.insertAdjacentHTML
+
+Element.prototype.insertAdjacentHTML = function(place, text) {
+  var regex = /(srcset|src|href|action|integrity|nonce|http-equiv)\s*=\s*['`"](.*?)['"`]/gi
+  text = text.toString()
+  text = text.replace(regex, (match, p1, p2) => {
+    if (p1=='integrity' || p1=='nonce' || p1=='http-equiv') return ''
+    if (p1=='srcset') {
+      const src_arr = [];
+
+      p2.split(',').forEach(url => {
+        url = url.trimStart().split(' ');
+        url[0] = new Base(ctx).url(url[0]);
+        src_arr.push(url.join(' '));
+      });
+
+      p2 = src_arr.join(', ')
+      return `${p1}="${p2}"`
+    }
+    return `${p1}="${new Base(ctx).url(p2)}"`
+  })
+  return inserthtmlproto.apply(this, arguments)
+}
+
+window.Document.prototype.writeln = new Proxy(window.Document.prototype.writeln, {
+  apply: (target, that , args) => {
+    if (args.length) args = [ ctx.html.process(args.join(''), ctx.meta) ];
+    return Reflect.apply(target, that, args);
+  },
+});
+
+var docWriteHTML = document.write
+
+window.Document.prototype.write = function() {
+  if (arguments[0]) {
+    var regex = /(srcset|src|href|action|integrity|nonce|http-equiv)\s*=\s*['`"](.*?)['"`]/gi
+    arguments[0] = arguments[0].toString()
+    arguments[0] = arguments[0].replace(regex, (match, p1, p2) => {
+      if (p1=='integrity' || p1=='nonce' || p1=='http-equiv') return ''
+      if (p1=='srcset') {
+        const src_arr = [];
+
+        p2.split(',').forEach(url => {
+          url = url.trimStart().split(' ');
+          url[0] = new Base(ctx).url(url[0]);
+          src_arr.push(url.join(' '));
+        });
+
+        p2 = src_arr.join(', ')
+        return `${p1}="${p2}"`
+      }
+      return `${p1}="${new Base(ctx).url(p2)}"`
+    })
+  }
+  return docWriteHTML.apply(this, arguments)
+}
+
+window.Audio = new Proxy(window.Audio, {
+  construct: (target, args) => {
+    if (args[0]) args[0] = new Base(ctx).url(args[0])
+    return Reflect.construct(target, args);
+  },
+});
+
+//Function.prototype.apply.call = function() {return Function.prototype.call.apply(this, arguments)}
 
 document.currentScript.remove()

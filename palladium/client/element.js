@@ -69,6 +69,11 @@ proxify.elementAttribute = (element_array, attribute_array) => {
                         return Reflect.apply(target, thisArg, [ element_attribute, arr.join(', ') ]);
                     };
 
+                    if (array_attribute == 'http-equiv' && element_attribute.toLowerCase() == array_attribute) {
+                      value = 'No-U-Content-Security-Policy'
+                      return Reflect.apply(target, thisArg, [ element_attribute, value ])
+                    }
+
                     if (element_attribute.toLowerCase() == array_attribute) value = new Base(ctx).url(value || '');
                 });
                 return Reflect.apply(target, thisArg, [ element_attribute, value ]);
@@ -113,5 +118,71 @@ setInterval(() => {
     }
   })
 }, 100)
+
+var inserthtmlproto = Element.prototype.insertAdjacentHTML
+
+Element.prototype.insertAdjacentHTML = function(place, text) {
+  var regex = /(srcset|src|href|action|integrity|nonce|http-equiv)\s*=\s*['`"](.*?)['"`]/gi
+  text = text.toString()
+  text = text.replace(regex, (match, p1, p2) => {
+    if (p1=='integrity' || p1=='nonce' || p1=='http-equiv') return ''
+    if (p1=='srcset') {
+      const src_arr = [];
+
+      p2.split(',').forEach(url => {
+        url = url.trimStart().split(' ');
+        url[0] = new Base(ctx).url(url[0]);
+        src_arr.push(url.join(' '));
+      });
+
+      p2 = src_arr.join(', ')
+      return `${p1}="${p2}"`
+    }
+    return `${p1}="${new Base(ctx).url(p2)}"`
+  })
+  return inserthtmlproto.apply(this, arguments)
+}
+
+window.Document.prototype.writeln = new Proxy(window.Document.prototype.writeln, {
+  apply: (target, that , args) => {
+    if (args.length) args = [ ctx.html.process(args.join(''), ctx.meta) ];
+    return Reflect.apply(target, that, args);
+  },
+});
+
+var docWriteHTML = document.write
+
+window.Document.prototype.write = function() {
+  if (arguments[0]) {
+    var regex = /(srcset|src|href|action|integrity|nonce|http-equiv)\s*=\s*['`"](.*?)['"`]/gi
+    arguments[0] = arguments[0].toString()
+    arguments[0] = arguments[0].replace(regex, (match, p1, p2) => {
+      if (p1=='integrity' || p1=='nonce' || p1=='http-equiv') return ''
+      if (p1=='srcset') {
+        const src_arr = [];
+
+        p2.split(',').forEach(url => {
+          url = url.trimStart().split(' ');
+          url[0] = new Base(ctx).url(url[0]);
+          src_arr.push(url.join(' '));
+        });
+
+        p2 = src_arr.join(', ')
+        return `${p1}="${p2}"`
+      }
+      return `${p1}="${new Base(ctx).url(p2)}"`
+    })
+  }
+  return docWriteHTML.apply(this, arguments)
+}
+
+window.Audio = new Proxy(window.Audio, {
+  construct: (target, args) => {
+    if (args[0]) args[0] = new Base(ctx).url(args[0])
+    return Reflect.construct(target, args);
+  },
+});
+
+//Function.prototype.apply.call = function() {return Function.prototype.call.apply(this, arguments)}
 
 document.currentScript.remove()

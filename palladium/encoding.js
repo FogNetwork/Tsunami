@@ -13,6 +13,7 @@ var encoding = (ctx) => {
     case "xor":
       return {
         encode(str) {
+          str = str.replace('https://', 'https:/').replace('https:/', 'https://')
           return (encodeURIComponent(str.split('').map((char,ind)=>ind%2?String.fromCharCode(char.charCodeAt()^2):char).join('')));
         },
         decode(str) {
@@ -22,7 +23,7 @@ var encoding = (ctx) => {
       }
       break;
     case "base64":
-      return {
+      if (typeof window == 'undefined') return {
         encode(str) {
           return new Buffer.from(str).toString("base64");
         },
@@ -32,7 +33,17 @@ var encoding = (ctx) => {
           }
           return new Buffer.from(str, "base64").toString("utf-8");
         }
-      }
+      }; else return {
+        encode(str) {
+          return btoa(str)
+        },
+        decode(str) {
+          if (btoa(str).startsWith('http')) {
+            return str
+          }
+          return atob(str.split('/')[0])+str.split('/')[1]
+        }
+      };
       break;
     default:
       return {

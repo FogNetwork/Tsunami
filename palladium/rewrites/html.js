@@ -1,15 +1,36 @@
 var { JSDOM } = require('jsdom')
-var regex = /(srcset|src|href|action|integrity|nonce|http-equiv)\s*=\s*['`"](.*?)['"`]/gi
+var regex = /srcset\s*=\s*['`"](.*?)['"`]/gi
 
 module.exports = class HTMLRewriter {
   constructor(data, ctx) {
     return function HTML(data, ctx) {
       ctx.responseText = data.toString()
 
-      var rewriteData = {
-        tags: ['src', 'srcset', 'href'],
-        removetags: ['intergity', 'nonce', 'http-equiv']
-      }
+      var HTML_REWRITE_CONFIG = [
+        {
+          tags: ['http-equiv'],
+          action: ['replace'],
+          new: 'No-U-Content-Security-Policy',
+        },
+        {
+          tags: ['href', 'src', 'action'],
+          action: ['rewrite'],
+        },
+        {
+          tags: ['srcset'],
+          action: ['srcset'],
+        },
+        {
+          tags: ['integrity'],
+          action: ['replace'],
+          newtag: 'nointegrity',
+        },
+        {
+          tags: ['nonce'],
+          action: ['replace'],
+          newtag: 'nononce'
+        }
+      ]
 
       var injectData = {
         prefix: ctx.prefix,
@@ -22,38 +43,53 @@ module.exports = class HTMLRewriter {
         },
       }
 
-      ctx.responseText = ctx.responseText.replace(regex, (match, p1, p2) => {
-        if (p1=='integrity' || p1=='nonce' || p1=='http-equiv') return ''
-        if (p1=='srcset') {
-          const src_arr = [];
-
-          p2.split(',').forEach(url => {
-            url = url.trimStart().split(' ');
-            url[0] = new ctx.rewrite.Base(ctx).url(url[0]);
-            src_arr.push(url.join(' '));
-          });
-
-          p2 = src_arr.join(', ')
-          return `${p1}="${p2}"`
-        }
-        return `${p1}="${new ctx.rewrite.Base(ctx).url(p2)}"`
-      })
+      JSDOM.prototype.removeAttribute=function(attr) {}
 
       var html = new JSDOM(ctx.responseText, {'content-type': 'text/html'}), document = html.window.document;
 
-      document.querySelectorAll('*').forEach((node) => {
-        if (node.outerHTML.includes(ctx.prefix)) {node.setAttribute('data-palladium', true)}
+      var sample = `https://github.githubassets.com/images/modules/site/home/globe-700.jpg 700w,https://github.githubassets.com/images/modules/site/home/globe.jpg 1400w`
+
+      HTML_REWRITE_CONFIG.forEach((_config) => {
+        if (_config.action[0]=='rewrite') {
+          _config.tags.forEach((tag) => {
+            document.querySelectorAll(`*[${tag}]`).forEach(node => {
+              node.setAttribute(tag, new ctx.rewrite.Base(ctx).url(node.getAttribute(tag)))
+            })
+          })
+        }
+        if (_config.action[0]=='srcset') {
+          _config.tags.forEach((tag) => {
+            document.querySelectorAll(`*[${tag}]`).forEach(node => {
+              node.setAttribute(tag, RewriteSrcset(node.getAttribute(tag)))
+            })
+          })
+        }
+        if (_config.action[0]=='replace') {
+          _config.tags.forEach((tag) => {
+            document.querySelectorAll(`*[${tag}]`).forEach(node => {
+              if (_config.new) {
+                node.setAttribute(tag, _config.new)
+                node.removeAttribute(tag)
+              }
+              if (_config.newtag) {
+                node.setAttribute(_config.newtag, node.getAttribute(tag))
+                node.removeAttribute(tag)
+              }
+            })
+          })
+        }
       })
 
-      document.querySelectorAll('script').forEach((node) => {
-        node.textContent ? node.textContent = ctx.rewrite.JSRewriter(node.textContent, ctx) : ''
-      })
-
-      rewriteData.removetags.forEach((tag) => {
-        document.querySelectorAll(`*[${tag}]`).forEach((node) => {
-          node.removeAttribute(tag)
-        })
-      })
+      function RewriteSrcset(sample) {
+        return sample.split(',').map(e => {
+          return(e.split(' ').map(a => {
+            if (a.startsWith('http')||a.startsWith('/')) {
+              var url = new ctx.rewrite.Base(ctx).url(a)
+            }
+            return a.replace(a, (url||a))
+          }).join(' '))
+        }).join(',')
+      }
 
       function InjectScript(){
         var e = document.createElement('script')
@@ -62,10 +98,13 @@ module.exports = class HTMLRewriter {
         document.querySelector('head').insertBefore(e, document.querySelector('head').childNodes[0])
       }
 
-      InjectScript()
+      InjectScript();
 
       ctx.responseText = html.serialize()
-      return html.serialize()
+
+      ctx.httpResponse.text = ctx.responseText
+
+      return html.serialize();
     }
   }
 }

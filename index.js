@@ -33,14 +33,19 @@ const proxy = new Corrosion({
 
 proxy.bundleScripts();
 
-const palladium = new PalladiumProxy({
+const Palladium = new PalladiumProxy({
   encode: "xor",
-  ssl: "false",
+  ssl: false,
   prefix: "/palladium/",
-  title: "Tsunami"
+  server: app,
+  Corrosion: [true, proxy],
+  title: "Tsunami",
+  /*"requestMiddleware": [
+    PalladiumProxy.blackList(["accounts.google.com"], "Page is Blocked")
+  ],*/
 })
 
-palladium.clientScript();
+Palladium.init();
 
 if (auth == "true") { 
 app.use(basicAuth({
@@ -82,8 +87,8 @@ app.use(function (req, res) {
       mist.video(req, res)
     } else if (req.url.startsWith(proxy.prefix)) {
       proxy.request(req,res);
-    } else if (req.url.startsWith(palladium.prefix)) {
-      return palladium.request(req, res)
+    } else if (req.url.startsWith(Palladium.prefix)) {
+      return Palladium.request(req, res)
     } else {
       res.status(404).sendFile("404.html", {root: "./public"});
     }

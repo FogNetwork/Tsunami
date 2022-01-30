@@ -38,3 +38,74 @@ Object.defineProperty(window, "PLocation", {
     return this.location;
   }
 });
+
+var pushstates = history.pushState;
+
+window.history.pushState = new Proxy(history.pushState, {
+  apply(target, thisArg, args) {
+  args[2] = new Base(ctx).url(args[2])
+  return Reflect.apply(target, thisArg, args)
+  }
+});
+
+window.history.replaceState = new Proxy(history.replaceState, {
+  apply(target, thisArg, args) {
+    args[2] = new Base(ctx).url(args[2])
+    return Reflect.apply(target, thisArg, args)
+  }
+});
+
+Object.defineProperty(document, 'domain', {
+  get() {
+    return new URL(ctx.url).hostname;
+  },
+  set(val) {
+    return val;
+  }
+});
+
+var oCookie = document.cookie
+
+Object.defineProperty(document, 'cookie', {
+  get() {
+    var cookie = Object.getOwnPropertyDescriptor(window.Document.prototype, 'cookie').get.call(this),
+      new_cookie = [],
+      cookie_array = cookie.split('; ');
+    cookie_array.forEach(cookie => {
+      const cookie_name = cookie.split('=').splice(0, 1).join(),
+        cookie_value = cookie.split('=').splice(1).join();
+      if (new URL(ctx.url).hostname.includes(cookie_name.split('@').splice(1).join())) new_cookie.push(cookie_name.split('@').splice(0, 1).join() + '=' + cookie_value);
+    });
+    return new_cookie.join('; ');;
+  },
+  set(val) {
+    Object.getOwnPropertyDescriptor(Document.prototype, 'cookie').set.call(this, val);
+  }
+})
+
+window.Worker = new Proxy(window.Worker, {
+  construct(target, args) {
+    if (args[0]) args[0] = new Base(ctx).url(args[0]);
+    return Reflect.construct(target, args);
+  }
+});
+
+if (config.title) {
+  var oTitle = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+  document.title = config.title
+  Object.defineProperty(Document.prototype, 'title', {
+    set(value) {
+      oTitle = config.title
+      return value
+    },
+    get() {
+      return config.title
+    }
+  })
+}
+
+if (location.search && !(new URLSearchParams(location.search).get('palladium-redir'))) {
+  var p1 = ctx.encoding.decode(location.pathname.split(config.prefix)[1])
+  console.log(p1+location.search+'&palladium-redir=true')
+  location.href = config.prefix+ctx.encoding.encode(p1+location.search+'&palladium-redir=true')
+}
