@@ -8,11 +8,8 @@ body:
       label: Choose Proxy
       multiple: false
       options:
-        - Smoke
+        - Palladium
         - Corrosion
-        - Alloy
-        - Womginx
-        - PyDodge
   - type: textarea
     id: comment
     attributes:
