@@ -151,11 +151,11 @@ Join our [discord](https://discord.gg/yk33HZSZkU) for more Tsunami links
 
 **Captcha not working/issues**
 
-Captcha is only supported on Womginx, though the support is limited
+Captcha is only supported on Corrosion, though the support is limited
 
 **Why is Discord not working properly?**
 
-Try using Womginx or Corrosion. Refreshing the page might help
+Try using the QR code. Refreshing the page might help
 
 ### Contact
 
