@@ -18,7 +18,7 @@
 <a href="https://repl.it/github/c0d3rb0y/Milknami"><img height="30px" src="https://raw.githubusercontent.com/FogNetwork/Tsunami/main/deploy/replit2.svg"><img></a>
 <a href="https://glitch.com/edit/#!/import/github/c0d3rb0y/Milknami"><img height="30px" src="https://raw.githubusercontent.com/FogNetwork/Tsunami/main/deploy/glitch2.svg"><img></a>
 </p>
-
+GUYS WHY IS THERE SO MANY FORKS THIS PROJECT DIED MONTHS AGOOOOOO LMAO
 ### Credits
 
 [Coderkid](https://github.com/c0d3rb0y) - Milknami Main Dev
