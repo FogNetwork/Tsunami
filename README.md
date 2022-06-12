@@ -78,7 +78,7 @@ Read the documentation below to find out more</p>
 ### Version 1.0
 - [x] Initial files
 
-### Version 2.0 (Coming soon)
+### Version 2.0
 - [x] New proxies
 - [x] Update css style (user-select:none and drop shadow)
 - [x] Chromebook only mode
@@ -90,12 +90,14 @@ Read the documentation below to find out more</p>
 - [x] Css vars
 - [x] PWA install button
 - [x] Better tab cloak (enter website url, advanced, proxy favicon)
-- [ ] Inspect button (Avo)
 - [x] Better Go Page
 - [x] Remove mist and docs
 - [x] Background settings
+
+### Release v2.25
 - [ ] Remove keywords
 - [ ] Apps page (Replace Chatbox)
+- [ ] Inspect button (Avo)
 - [ ] Inspect button (Avo)
 
 ### Version 2.5
