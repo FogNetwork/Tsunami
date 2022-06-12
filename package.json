@@ -1,5 +1,5 @@
 {
-    "name": "Tsunami",
+    "name": "tsunami",
     "version": "1.0.0",
     "repository": "https://github.com/FogNetwork/Tsunami",
     "bugs": {
@@ -43,8 +43,8 @@
         "inherits": "^2.0.4",
         "jsdom": "^18.0.0",
         "kb-controls": "^0.2.0",
+        "lsblocker": "^1.0.2",
         "mime": "^3.0.0",
-        "mist-yt": "^1.5.0",
         "ndarray-continuous": "^0.4.2",
         "ndarray-fill": "^1.0.2",
         "node-fetch": "^2.1.0",
@@ -63,7 +63,8 @@
         "watchify": "^4.0.0",
         "webpack": "^5.58.0",
         "ws": "^8.2.3",
-        "ytdl-core": "^4.9.2",
-        "zeros": "^1.0.0"
+        "zeros": "^1.0.0",
+        "bare-server-node": "github:tomphttp/bare-server-node",
+        "Rhodium": "github:ludicrousdevelopment/rhodium"
     }
 }

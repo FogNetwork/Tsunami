@@ -3,7 +3,7 @@
   "short_name": "Tsunami",
   "description": "An official Fog Network proxy site, made to access the blocked web",
   "icons": [{
-    "src": "/img/logo.png",
+    "src": "/img/app.png",
       "sizes": "500x500",
       "type": "image/png"
     }],
