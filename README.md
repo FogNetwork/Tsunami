@@ -189,10 +189,6 @@ Nebelung - [Nebelung#1335](https://discord.com/users/887118260963782686)
 
 ### Proxy Sources
 
-https://github.com/titaniumnetwork-dev/Ultraviolet
-
-https://github.com/sysce/stomp
-
 [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet)
 
 [Stomp](https://github.com/sysce/stomp)
@@ -201,9 +197,9 @@ https://github.com/sysce/stomp
 
 [Modified Corrosion](https://github.com/BinBashBanana/Corrosion-Heroku)
 
-[Palladium](https://github.com/FogNetwork/Palladium) (Not Used)
-
 [Rhodium](https://github.com/LudicrousDevelopment/Rhodium)
+
+[Palladium](https://github.com/FogNetwork/Palladium) (Not Used)
 
 [Womginx](https://github.com/binary-person/womginx) (Not Used)
 
