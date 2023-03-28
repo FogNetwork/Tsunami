@@ -1,3 +1,8 @@
+# Update
+Tsunami is no longer being worked on.
+
+Like Tsunami and want to check out my latest proxy? Use [Metallic](https://github.com/Metallic-Web/Metallic)!
+
 <div align="center">
 
 <kbd>
